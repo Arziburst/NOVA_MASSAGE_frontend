@@ -8,8 +8,6 @@ import { getCommonConfig } from './webpack.common';
 import * as modules from '../modules';
 
 export const getDevConfig = () => {
-    console.log(process.env.NODE_ENV);
-
     return merge(
         getCommonConfig(),
         {
@@ -17,6 +15,8 @@ export const getDevConfig = () => {
             devtool: 'eval-cheap-module-source-map',
             stats:   'none',
         },
+        modules.loadImagesDev(),
         modules.loadDevCss(),
+        modules.loadFontsDev(),
     );
 };

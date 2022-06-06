@@ -13,10 +13,11 @@ export const loadDevCss = (): Configuration => ({
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.css|.scss|.sass$/,
                 use:  [
                     'style-loader',
                     loadCss({ sourceMap: true }),
+                    'sass-loader',
                 ],
             },
         ],

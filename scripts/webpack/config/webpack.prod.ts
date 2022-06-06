@@ -8,8 +8,6 @@ import { getCommonConfig } from './webpack.common';
 import * as modules from '../modules';
 
 export const getProdConfig = () => {
-    console.log(1);
-
     return merge(
         getCommonConfig(),
         {
@@ -17,10 +15,12 @@ export const getProdConfig = () => {
             devtool: false,
         },
         modules.cleanDirectories(),
+        modules.loadImagesProd(),
         modules.loadProdCss(),
-        modules.filterMomentLocales(),
         modules.connectBuildProgressIndicator(),
         modules.optimizeBuild(),
         modules.connectBundleAnalyzer(),
+        modules.loadFontsProd(),
+        modules.webpackShellProd(),
     );
 };
