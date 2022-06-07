@@ -1,6 +1,7 @@
 // Core
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 const loadCss = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'css-loader',
@@ -28,12 +29,21 @@ export const loadProdCss = (): Configuration => ({
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /.s?css$/,
                 use:  [
+
                     MiniCssExtractPlugin.loader,
                     loadCss({ sourceMap: false }),
+                    'sass-loader',
                 ],
             },
+        ],
+    },
+    optimization: {
+        minimizer: [
+            // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+            // `...`,
+            new CssMinimizerPlugin(),
         ],
     },
     plugins: [
