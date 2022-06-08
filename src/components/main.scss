@@ -1,0 +1,57 @@
+// Assets
+// todo
+@font-face {
+       font-family: 'Inter';
+       src: url("../assets/fonts/Inter.ttf") format("ttf");
+    }
+@import "../assets/index.scss";
+
+// Components
+@import "./header/styles.scss";
+@import "./main/styles.scss";
+
+// Styles
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: calc(#{$maxWidth + px});
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.section {
+    padding: 15px 0px;
+
+    @media (min-width: 576px) {
+        padding: 20px 0px;
+    }
+    @media (min-width: 1200px) {
+        padding: 25px 0px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    
+    &--justify_between {
+        justify-content: space-between;
+    }
+    &--justify-content {
+        justify-content: center;
+    }
+    &--align-center {
+        align-items: center;
+    }
+}
+
+.text {
+    &--center {
+        text-align: center;
+    }
+}
+

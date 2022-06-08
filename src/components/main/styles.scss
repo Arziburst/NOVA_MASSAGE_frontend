@@ -1,0 +1,14 @@
+.main {
+    &__title {
+        margin-top: 0px;
+        margin-bottom: 0.5em;
+        @include adaptive-font(40, 34);
+        font-family: 'Inter';
+        font-weight: bold
+    }
+    &__subtitle {
+        @include adaptive-font(20, 16);
+        font-family: 'Inter';
+        font-weight: 100;
+    }
+}

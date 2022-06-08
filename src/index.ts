@@ -1,3 +1,4 @@
-import './partials/main.scss';
+import 'normalize.css';
+import './components/main.scss';
 
 export default {};

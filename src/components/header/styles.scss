@@ -1,0 +1,29 @@
+@import "../../assets/index.scss";
+
+
+header {
+    padding: 15px 0px;
+    box-shadow: 0px 4px 4px rgba(73, 107, 155, 0.15);
+    a {
+        svg {
+            path {
+                fill: $colorPrimary;
+            }
+        }
+    }
+
+    .header {
+        &--font_size {
+            &_title {
+                @include adaptive-font(20, 15);
+                font-family: 'Inter';
+                font-weight: bold
+            }
+            &_subtitle {
+                @include adaptive-font(16, 12);
+                font-family: 'Inter';
+                font-weight: 100;
+            }
+        }
+    }
+}
