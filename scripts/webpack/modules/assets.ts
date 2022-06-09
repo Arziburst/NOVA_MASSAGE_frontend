@@ -23,7 +23,6 @@ export const loadImagesDev = (): Configuration => ({
         rules: [
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
             },
         ],
     },
@@ -34,7 +33,6 @@ export const loadImagesProd = (): Configuration => ({
         rules: [
             {
                 test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-                type: 'asset/resource',
                 use:  [
                     {
                         loader:  ImageMinimizerPlugin.loader,
@@ -72,14 +70,7 @@ export const loadFontsProd = (): Configuration => ({
         rules: [
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                use:  [
-                    {
-                        loader:  'file-loader',
-                        options: {
-                            name: 'assets/[hash:5].[ext]',
-                        },
-                    },
-                ],
+                type: 'asset/resource',
             },
         ],
     },

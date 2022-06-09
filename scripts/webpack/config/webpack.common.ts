@@ -25,10 +25,8 @@ export const getCommonConfig = () => {
                     : 'js/[chunkhash].bundle.js',
                 publicPath:          '/',
                 //hashDigestLength:    5,
-                assetModuleFilename: IS_DEVELOPMENT      // asset name
-                    ? 'assets/[name][ext]'
-                    : 'assets/[hash][ext]',
-                hashDigestLength: 5,
+                assetModuleFilename: 'assets/[name][ext]',
+                hashDigestLength:    5,
             },
             resolve: {
                 extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
@@ -38,6 +36,5 @@ export const getCommonConfig = () => {
         modules.loadHandlebars(),
         modules.defineEnvVariables(),
         modules.connectHtml(),
-        modules.provideGlobals(),
     );
 };

@@ -10,6 +10,14 @@ const loadCss = ({ sourceMap }: { sourceMap: boolean }) => ({
     },
 });
 
+const loadSass = ({ sourceMap }: { sourceMap: boolean }) => ({
+    loader:  'sass-loader',
+    options: {
+        sourceMap,
+        webpackImporter: false,
+    },
+});
+
 export const loadDevCss = (): Configuration => ({
     module: {
         rules: [
@@ -18,7 +26,8 @@ export const loadDevCss = (): Configuration => ({
                 use:  [
                     'style-loader',
                     loadCss({ sourceMap: true }),
-                    'sass-loader',
+                    'resolve-url-loader',
+                    loadSass({ sourceMap: true }),
                 ],
             },
         ],
@@ -31,10 +40,11 @@ export const loadProdCss = (): Configuration => ({
             {
                 test: /.s?css$/,
                 use:  [
-
                     MiniCssExtractPlugin.loader,
                     loadCss({ sourceMap: false }),
-                    'sass-loader',
+                    'resolve-url-loader',
+                    loadSass({ sourceMap: true }),
+
                 ],
             },
         ],
@@ -44,8 +54,8 @@ export const loadProdCss = (): Configuration => ({
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename:      'css/[name].[contenthash:5].[id].css',
-            chunkFilename: 'css/[name].[contenthash:5].[id].css',
+            filename:      '[name].[contenthash:5].css',
+            chunkFilename: '[name].[contenthash:3].css',
         }),
     ],
 });

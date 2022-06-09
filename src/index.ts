@@ -1,4 +1,6 @@
-import 'normalize.css';
-import './components/main.scss';
+// Styles
+// import 'normalize.css';
+
+import './main.scss';
 
 export default {};

@@ -21,6 +21,5 @@ export const getProdConfig = () => {
         modules.optimizeBuild(),
         modules.connectBundleAnalyzer(),
         modules.loadFontsProd(),
-        modules.webpackShellProd(),
     );
 };

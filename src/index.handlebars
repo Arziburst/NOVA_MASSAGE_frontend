@@ -7,13 +7,30 @@
     <title>
         {{htmlWebpackPlugin.options.title}}
     </title>
-    <script>
-
-    </script>
+    {{!--
+    <link href="http://fonts.cdnfonts.com/css/serif" rel="stylesheet"> --}}
 </head>
 
+<style>
+</style>
+{{!-- * {
+font-family: 'Serif Narrow Italic', sans-serif !important;
+font-family: 'Serif Narrow', sans-serif !important;
+font-family: 'Serif Medium', sans-serif !important;
+font-family: 'Serif Medium Italic', sans-serif !important;
+font-family: 'Serif Black', sans-serif !important;
+font-family: 'Serif BlackItalic', sans-serif !important;
+
+} --}}
+
 <body>
-    {{> components/main}}
+    {{> components/header/index}}
+    <main>
+        {{> components/main/index}}
+    </main>
+    <footer class="wrapper">
+        footer
+    </footer>
 </body>
 
 </html>
