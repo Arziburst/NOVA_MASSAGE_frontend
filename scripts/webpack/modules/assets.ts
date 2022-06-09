@@ -23,6 +23,7 @@ export const loadImagesDev = (): Configuration => ({
         rules: [
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
         ],
     },
@@ -33,23 +34,26 @@ export const loadImagesProd = (): Configuration => ({
         rules: [
             {
                 test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-                use:  [
-                    {
-                        loader:  ImageMinimizerPlugin.loader,
-                        options: {
-                            deleteOriginalAssets: true,
-                            minimizerOptions:     {
-                                plugins: [
-                                    [ 'optipng', { optimizationLevel: 4, interlaced: null }],
-                                    [ 'jpegtran', { progressive: true }],
-                                    [ 'gifsicle', { optimizationLevel: 3, interlaced: false }],
-                                    [ 'webp', { quality: 75 }],
-                                ],
-                            },
-                        },
-                    },
-                ],
+                type: 'asset/resource',
             },
+        ],
+    },
+    optimization: {
+        minimizer: [
+            new ImageMinimizerPlugin({
+                minimizer: {
+                    implementation: ImageMinimizerPlugin.imageminMinify,
+                    options:        {
+                        plugins: [
+                            'imagemin-gifsicle',
+                            'imagemin-mozjpeg',
+                            'imagemin-pngquant',
+                            'imagemin-svgo',
+                        ],
+                    },
+                },
+                loader: false,
+            }),
         ],
     },
 });

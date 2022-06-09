@@ -43,7 +43,6 @@ export const loadProdCss = (): Configuration => ({
                     loadCss({ sourceMap: false }),
                     'resolve-url-loader',
                     loadSass({ sourceMap: true }),
-
                 ],
             },
         ],
