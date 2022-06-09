@@ -3,7 +3,7 @@ import { path as PROJECT_ROOT } from 'app-root-path';
 import { resolve } from 'path';
 
 export const HOST = 'localhost';
-export const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+export const PORT = 3000;
 
 // Paths
 export { PROJECT_ROOT };
