@@ -7,9 +7,6 @@ import WebpackBar from 'webpackbar';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import dotenv from 'dotenv';
 
-// Constants
-import { BUILD_ASSETS_DIRECTORY } from '../constants';
-
 export const connectBuildProgressIndicator = (): Configuration => ({
     plugins: [ new WebpackBar({ basic: true }) ],
 });
