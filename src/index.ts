@@ -1,6 +1,3 @@
 // Styles
-// import 'normalize.css';
-
+import 'normalize.css';
 import './main.scss';
-
-export default {};

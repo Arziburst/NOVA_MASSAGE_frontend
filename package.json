@@ -78,5 +78,8 @@
         "webpack-pwa-manifest": "^4.3.0",
         "webpack-shell-plugin-next": "^2.2.2",
         "webpackbar": "^5.0.2"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1"
     }
 }

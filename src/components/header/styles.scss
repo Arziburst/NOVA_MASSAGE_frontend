@@ -1,5 +1,4 @@
-@import "../../assets/variables/colors.scss";
-
+@import "../../assets/variables.scss";
 
 header {
     padding: 15px 0px;
@@ -16,12 +15,10 @@ header {
         &--font_size {
             &_title {
                 @include adaptive-font(20, 15);
-                font-family: 'Inter';
                 font-weight: bold
             }
             &_subtitle {
                 @include adaptive-font(16, 12);
-                font-family: 'Inter';
                 font-weight: 100;
             }
         }

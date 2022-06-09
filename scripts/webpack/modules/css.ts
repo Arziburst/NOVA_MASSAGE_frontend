@@ -14,7 +14,6 @@ const loadSass = ({ sourceMap }: { sourceMap: boolean }) => ({
     loader:  'sass-loader',
     options: {
         sourceMap,
-        webpackImporter: false,
     },
 });
 
@@ -25,7 +24,7 @@ export const loadDevCss = (): Configuration => ({
                 test: /\.css|.scss|.sass$/,
                 use:  [
                     'style-loader',
-                    loadCss({ sourceMap: true }),
+                    loadCss({ sourceMap: false }),
                     'resolve-url-loader',
                     loadSass({ sourceMap: true }),
                 ],

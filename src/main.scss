@@ -1,53 +1,10 @@
 // Assets
-@import './assets/variables/index.scss';
-
-@font-face {
-    font-family: 'Inter';
-    src: url("./assets/inter.ttf") format('opentype');
-}
-
-$fontFamilyPrimary: 'Inter';
-
-//? how to use:          @include adaptive-font(100px, 10px);
-@mixin adaptive-font($pcSize, $modSize) {
-    $addSize: $pcSize - $modSize;
-    $addModSize: $addSize +$addSize * 0.7;
-
-    @media (max-width: 767px) {
-        font-size: calc(#{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidth}));
-    }
-
-    @media (min-width: 767px) {
-        font-size: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
-    }
-}
-
-.font {
-    &--color {
-        &_primary {
-            // blue
-            color: $colorPrimary;
-        }
-
-        &_secondary {
-            // black
-            color: $colorSecondary;
-        }
-
-        &_tertiary {
-            color: white;
-        }
-    }
-
-    &--family_primary {
-        font-family: $fontFamilyPrimary;
-    }
-}
+@import './assets/variables.scss';
+@import './assets/fonts.scss';
 
 // Components
 @import "./components/header/styles.scss";
 @import "./components/main/styles.scss";
-
 
 // Styles
 * {
