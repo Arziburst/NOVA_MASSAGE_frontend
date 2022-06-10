@@ -2,4 +2,4 @@
 import 'normalize.css';
 import './main.scss';
 
-import './assets/images/photoMaster.jpg';
+import './assets/images/photoMaster.png';

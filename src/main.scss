@@ -6,17 +6,48 @@
 @import "./components/header/styles.scss";
 @import "./components/main/styles.scss";
 
+$controlPadding: 15px;
+
 // Styles
+body {
+    scroll-behavior: smooth;
+}
 * {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
 }
 
+a, a:active, a:hover {
+    outline: none;
+    text-decoration: none;
+    color: $colorSecondary;
+    
+}
+
 .wrapper {
     max-width: calc(#{$maxWidth + px});
     margin: 0px auto;
     padding: 0px 15px;
+
+    @media (min-width: 576px) {
+        padding: 0px 30px;
+    }
+    @media (min-width: 768px) {
+        padding: 0px 50px;
+    }
+    @media (min-width: 992px) {
+        padding: 0px 80px;
+    }
+    @media (min-width: 1200px) {
+        padding: 0px 150px;
+    }
+    @media (min-width: 1400px) {
+        padding: 0px 200px;
+    }
+    @media (min-width: #{$maxWidth + px + 200px}) {
+        padding: 0px 0px;
+    }
 }
 
 .section {
@@ -25,22 +56,46 @@
     @media (min-width: 576px) {
         padding: 20px 0px;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
         padding: 25px 0px;
     }
+    @media (min-width: 992px) {
+        padding: 30px 0px;
+    }
+    @media (min-width: 1200px) {
+        padding: 40px 0px;
+    }
+    @media (min-width: 1400px) {
+        padding: 50px 0px;
+    }
+    @media (min-width: 1600px) {
+        padding: 60px 0px;
+    }
+
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    
-    &--justify_between {
-        justify-content: space-between;
+
+    &--justify_content {
+        &_center {
+            justify-content: center;
+        }
+        &_left {
+            justify-content: left;
+            
+            @media (min-width: 768px) {
+                &_media_md {
+                    justify-content: left;
+                }
+            }
+        }
+        &_between {
+            justify-content: space-between;
+        }
     }
-    &--justify-content {
-        justify-content: center;
-    }
-    &--align-center {
+    &--align_center {
         align-items: center;
     }
 }
@@ -48,6 +103,34 @@
 .text {
     &--center {
         text-align: center;
+        
+    }
+    &--left {
+        @media (min-width: 576px) {
+            &_media_sm {
+                text-align: left;
+            }
+        }
+        @media (min-width: 768px) {
+            &_media_md {
+                text-align: left;
+            }
+        }
+        @media (min-width: 992px) {
+            &_media_lg {
+                text-align: left;
+            }
+        }
+        @media (min-width: 1200px) {
+            &_media_xl {
+                text-align: left;
+            }
+        }
+        @media (min-width: 1400px) {
+            &_media_xxl {
+                text-align: left;
+            }
+        }
     }
 }
 
@@ -62,7 +145,10 @@
 
     &--padding {
         &_primary {
-            padding: 15px;
+            padding: $controlPadding;
+            &.border--size_primary {
+                padding: #{$controlPadding - 2px};
+            }
         }
     }
 
@@ -72,6 +158,34 @@
 
     &--bg__secondary {
         background-color: transparent;
+    }
+
+    &--width_auto {
+        @media (min-width: 576px) {
+            &_media_sm {
+                width: auto;
+            }
+        }
+        @media (min-width: 768px) {
+            &_media_md {
+                width: auto;
+            }
+        }
+        @media (min-width: 992px) {
+            &_media_lg {
+                width: auto;
+            }
+        }
+        @media (min-width: 1200px) {
+            &_media_xl {
+                width: auto;
+            }
+        }
+        @media (min-width: 1400px) {
+            &_media_xxl {
+                width: auto;   
+            }
+        }
     }
     
 }
