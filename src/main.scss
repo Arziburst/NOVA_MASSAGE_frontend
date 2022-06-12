@@ -18,7 +18,9 @@ body {
 	box-sizing: border-box;
 }
 
-a, a:active, a:hover {
+a, 
+a:active,
+a:hover {
     outline: none;
     text-decoration: none;
     color: $colorSecondary;
