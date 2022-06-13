@@ -1,0 +1,51 @@
+.about {
+    &__title {
+        margin-bottom: 0.7em;
+        @include adaptive-font(36, 30);
+        @media (min-width: 768px) {
+            margin-bottom: 1em;
+        }
+    }
+    &__text {
+        margin-bottom: 1em;
+        @include adaptive-font(20, 15);
+    }
+    &__line {
+        border: none;
+        background-color: $colorPrimary;
+        height: 2px;
+    }
+}
+
+.under_line {
+    &__card {
+        flex: 33%;
+    }
+    &__title {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        @include adaptive-font(25, 20);
+    }
+    &__text {
+        @include adaptive-font(20, 15);
+    }
+}
+
+.image_make_massage {
+    &__image {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@
 // Components
 @import "./components/header/styles.scss";
 @import "./components/main/styles.scss";
+@import "./components/about/styles.scss";
 
 $controlPadding: 15px;
 
@@ -17,14 +18,12 @@ body {
 	padding: 0px;
 	box-sizing: border-box;
 }
-
 a, 
 a:active,
 a:hover {
     outline: none;
     text-decoration: none;
     color: $colorSecondary;
-    
 }
 
 .wrapper {
@@ -55,23 +54,8 @@ a:hover {
 .section {
     padding: 15px 0px;
 
-    @media (min-width: 576px) {
-        padding: 20px 0px;
-    }
-    @media (min-width: 768px) {
-        padding: 25px 0px;
-    }
-    @media (min-width: 992px) {
-        padding: 30px 0px;
-    }
-    @media (min-width: 1200px) {
-        padding: 40px 0px;
-    }
-    @media (min-width: 1400px) {
-        padding: 50px 0px;
-    }
-    @media (min-width: 1600px) {
-        padding: 60px 0px;
+    &--full_screen {
+        min-height: 100vh;
     }
 
 }
@@ -80,6 +64,10 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
 
+    &--flex {
+        display: flex;
+    }
+
     &--justify_content {
         &_center {
             justify-content: center;
@@ -87,8 +75,13 @@ a:hover {
         &_left {
             justify-content: left;
             
-            @media (min-width: 768px) {
+            @media (min-width: 700px) {
                 &_media_md {
+                    justify-content: left;
+                }
+            }
+            @media (min-width: 992px) {
+                &_media_lg {
                     justify-content: left;
                 }
             }
@@ -96,9 +89,20 @@ a:hover {
         &_between {
             justify-content: space-between;
         }
+        &_around {
+            justify-content: space-around;
+        }
     }
-    &--align_center {
-        align-items: center;
+    &--align {
+        &_items_center {
+            align-items: center;
+        }
+        &_align_content {
+            align-content: center;
+        }
+    }
+    &--direction {
+        flex-direction: column;
     }
 }
 
@@ -202,7 +206,25 @@ a:hover {
 }
 
 .margin {
-    &--bottom_primary {
-        margin-bottom: 20px;
+    &--bottom {
+        &_primary {
+            margin-bottom: 20px;
+        }
+        &_secondary {
+            margin-bottom: 10px;
+        }
+    }
+    &--vertical_center {
+        margin: auto 0;
+    }
+}
+.padding {
+    &--bottom {
+        &_primary {
+            padding-bottom: 20px;
+        }
+        &_secondary {
+            padding-bottom: 10px;
+        }
     }
 }
