@@ -1,6 +1,8 @@
-$borderWidthCycle: 30px;
+$borderWidthCycle: 40px;
+$widthBetweenCycles: 1px;
+$sizePointForCycle: 15px;
 
-$cardElementSvgSize: 30px;
+$cardElementSvgSize: 25px;
 
 $changePositionElementsMedia: 992px;
 
@@ -21,9 +23,11 @@ $changePositionElementsMedia: 992px;
     }
     
     .photo {
-        padding: 1px;
-        height: calc(100vw - 30px);
-        width: calc(100vw - 30px);
+        padding: $widthBetweenCycles;
+        height: calc(100vw - 40px);
+        width: calc(100vw - 40px);
+
+        position: relative;
 
         $maxSize: 792px;
         max-width: $maxSize;
@@ -32,8 +36,48 @@ $changePositionElementsMedia: 992px;
         border-radius: 50%;
         border: $borderWidthCycle solid #d2ecf7;
 
+        &::before {
+            content: "";
+            position: absolute;
+            top: 35%;
+            left: 2.5%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            height: $sizePointForCycle;
+            width: $sizePointForCycle;
+            background-color: white;
+            z-index: 1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            right: 0%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            height: $sizePointForCycle;
+            width: $sizePointForCycle;
+            background-color: white;
+            z-index: 1;
+            @media (min-width: 360px) {
+                right: 1%;
+            }
+            @media (min-width: 400px) {
+                right: 2%;
+            }
+            @media (min-width: 470px) {
+                right: 3%;
+            }
+            @media (min-width: 1300px) {
+                right: 4%;
+            }
+            @media (min-width: 1700px) {
+                right: 4.5%;
+            }
+        }
+
         @media (min-width: 500px) {
-            $size: 470px;
+            $size: 459px;
             height: $size;
             width: $size;
         }
@@ -60,15 +104,23 @@ $changePositionElementsMedia: 992px;
             display: block;
             width: 100%;
             height: auto;
-            
+            z-index: 1;
         }
     }
     .grid {
         display: grid;
         grid-row-gap: 40px;
-        grid-column-gap: 30px;
+        grid-column-gap: 20px;
         align-items: center; 
         width: 100%;
+
+        @media (min-width: $changePositionElementsMedia) {
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+        }
+        @media (min-width: 1050px) {
+            grid-column-gap: 50px;
+        }
         
         &--order {
             &_1 {
@@ -102,7 +154,7 @@ $changePositionElementsMedia: 992px;
                     }
                 }
                     
-                @media (max-width: 992px) {
+                @media (max-width: 991px) {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -117,12 +169,6 @@ $changePositionElementsMedia: 992px;
                 }
             }
         }
-        
-        
-        @media (min-width: $changePositionElementsMedia) {
-            grid-template-columns: 1fr 1fr;
-            justify-content: space-between;
-        }
     }
 }
 
@@ -131,13 +177,11 @@ $changePositionElementsMedia: 992px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 10px -5px #888888;
 
-    @media (min-width: 576px) {
-        padding: 20px;
-    }
-    @media (min-width: 756px) {
+    @media (min-width: 510px) {
         padding: 15px;
     }
-    @media (min-width: 1500px) {
+
+    @media (min-width: 1400px) {
         padding: 20px;
     }
 
@@ -161,57 +205,83 @@ $changePositionElementsMedia: 992px;
         &_1 {
             position: absolute;
             top: 10%;
-            left:0%;
-            transform: translate(-0%, -50%);
+            left: 0%;
+            transform: translate(0%, 0%);
+            
+            @media (min-width: 510px) {
+                // left: 10%;
+            }
         }
         &_2 {
             position: absolute;
-            top: 45%;
+            top: 50%;
             right: 0%;
             transform: translate(0%, -50%);
+            
+            @media (min-width: 600px) {
+                transform: translate(50%, -50%);
+            }
         }
         &_3 {
             position: absolute;
             top: 80%;
             left: 0%;
-            transform: translate(0%, -50%);
+            transform: translate(0%, 0%);
+        }
+
+        @for $i from 1 through 3 {
+            $index: 20;
+            &_#{$i} {
+                z-index: $index;
+            }
+            &_svg_#{$i} {
+                z-index: $index;
+            }
         }
         &_svg_1 {
             position: absolute;
-            top: 20%;
+            top: 10%;
             right: 10%;
-            transform: translate(0%, -50%);
-            svg {
-                width: $cardElementSvgSize;
-                height: $cardElementSvgSize;
-                path {
-                    fill: $colorPrimary;
-                }
-            }
+            transform: translate(0%, 0%);
         }
         &_svg_2 {
             position: absolute;
             top: 50%;
-            left: 2%;
+            left: 0%;
             transform: translate(0%, -50%);
-            svg {
-                width: $cardElementSvgSize;
-                height: $cardElementSvgSize;
-                path {
-                    fill: $colorPrimary;
-                }
+
+            @media (min-width: 600px) {
+                transform: translate(-50%, -50%);
+            }
+            @media (min-width: 992px) {
+                transform: translate(0%, -50%);
+            }
+            @media (min-width: 1050px) {
+                transform: translate(-50%, -50%);
             }
         }
         &_svg_3 {
             position: absolute;
-            bottom: 10%;
+            top: 80%;
             right: 10%;
             transform: translate(0%, 0%);
-            svg {
-                width: $cardElementSvgSize;
-                height: $cardElementSvgSize;
-                path {
-                    fill: $colorPrimary;
+        }
+        @for $i from 1 through 3 {
+            &_svg_#{$i} {
+                svg {
+                    width: $cardElementSvgSize;
+                    height: auto;
+                    path {
+                        fill: $colorPrimary;
+                    }
+                    @media (min-width: 400px) {
+                        width: calc($cardElementSvgSize + 5px);
+                        height: auto;
+                    }
+                    @media (min-width: 1400px) {
+                        width: calc($cardElementSvgSize + 10px);
+                        height: auto;
+                    }
                 }
             }
         }

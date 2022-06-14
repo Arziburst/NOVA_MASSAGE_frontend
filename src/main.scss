@@ -228,3 +228,15 @@ a:hover {
         }
     }
 }
+
+.position {
+    &--relative {
+        position: relative;
+    }
+    &--fixed {
+        position: fixed;
+    }
+    &--absolute {
+        position: absolute;
+    }
+}
