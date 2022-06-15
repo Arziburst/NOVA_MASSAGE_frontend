@@ -1,0 +1,33 @@
+<div class="cost_card box--padding_bottom_10 border--radius box--shadow_primary {{classes}}">
+    <h4 class="cost_card__title text--center font--family_primary font--weight_700 font--color_primary">
+        {{title}}
+    </h4>
+
+    <img class="cost_card__img" src={{srcImg}} alt='{{altImg}}'>
+
+    <div class="cost_card__body">
+        <p class="cost_card__text text--center font--family_primary font--weight_300 font--color_primary">
+            {{text}}
+        </p>
+
+        <ul class="subtext">
+            {{#if one}}
+            <li class="subtext__text">{{one}}</li>
+            {{/if}}
+
+            {{#if two}}
+            <li class="subtext__text">{{two}}</li>
+            {{/if}}
+
+            {{#if three}}
+            <li class="subtext__text">{{three}}</li>
+            {{/if}}
+
+            {{#if four}}
+            <li class="subtext__text">{{four}}</li>
+            {{/if}}
+        </ul>
+        <p>{{cost}}</p>
+    </div>
+
+</div>

@@ -1,6 +1,6 @@
-<section class="about section section--full_screen">
+<section id="about" class="about section section--full_screen section--center">
     <div class="wrapper">
-        <div class="padding--bottom_primary">
+        <div class="box--padding_bottom_20">
             <h2
                 class="row row--justify_content_center text--center about__title font--family_primary font--weight_700 font--color_primary">
                 Про меня
@@ -20,34 +20,13 @@
         </div>
         <hr class="about__line">
         <div class="under_line row">
-            <span class="under_line__card row row--direction">
-                <h4 class="under_line__title text--center font--family_primary font--weight_700 font--color_primary">
-                    36
-                </h4>
-                <p class="under_line__text text--center font--family_primary font--weight_400 font--color_secondary">
-                    лет
-                </p>
-            </span>
-            <span class="under_line__card row row--direction ">
-                <h4 class="under_line__title text--center font--family_primary font--weight_700 font--color_primary">
-                    5
-                </h4>
-                <p class="under_line__text text--center font--family_primary font--weight_400 font--color_secondary">
-                    лет опыта
-                </p>
-            </span>
-            <span class="under_line__card row row--direction">
-                <h4 class="under_line__title text--center font--family_primary font--weight_700 font--color_primary">
-                    1000+
-                </h4>
-                <p class="under_line__text text--center font--family_primary font--weight_400 font--color_secondary">
-                    довольных клиентов
-                </p>
-            </span>
+            {{> ../../elements/underLineCard/index title="36" text='лет'}}
+            {{> ../../elements/underLineCard/index title="5" text='лет опыта'}}
+            {{> ../../elements/underLineCard/index title="1000+" text='довольных клиентов'}}
         </div>
     </div>
-</section>
-<section class="section image_make_massage">
-    <img class="image_make_massage__image" src="./assets/imageMakeMassage.png"
-        alt="Image how master do a massage to a client">
+    <div class="image_make_massage box--margin_bottom_20">
+        <div class="image_make_massage__image">
+        </div>
+    </div>
 </section>

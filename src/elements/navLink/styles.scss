@@ -1,0 +1,31 @@
+.nav {
+    &__item {
+        @include adaptive-font(24, 10);
+        position: relative;
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    &__item_link {
+        transition: all 0.3s;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background-color: $colorPrimary;
+            transition: width 0.3s;
+        }
+        &:hover:before, &:focus:before {
+            width: 100%;
+        }
+
+        &:hover, &:focus {
+            color: $colorPrimary;
+            font-weight: 900;
+        }
+    }
+}

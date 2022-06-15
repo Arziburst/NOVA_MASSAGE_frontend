@@ -6,17 +6,24 @@
 @import "./components/header/styles.scss";
 @import "./components/main/styles.scss";
 @import "./components/about/styles.scss";
+@import "./components/cost/styles.scss";
+
+// Elements
+@import "./elements/navLink/styles.scss";
+@import "./elements/mainCard/styles.scss";
+@import "./elements/underLineCard/styles.scss";
+@import "./elements/costCard/styles.scss";
+
+
 
 $controlPadding: 15px;
 
 // Styles
-body {
-    scroll-behavior: smooth;
-}
 * {
-	margin: 0px;
+    margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 a, 
 a:active,
@@ -57,7 +64,22 @@ a:hover {
     &--full_screen {
         min-height: 100vh;
     }
+    &--center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
+    @media (min-width: 576px) {
+        padding: 30px 0px;
+    }
+    @media (min-width: 756px) {
+        padding: 60px 0px;
+    }
+    @media (min-width: 1200px) {
+        padding: 80px 0px;
+    }
 }
 
 .row {
@@ -205,27 +227,45 @@ a:hover {
     }
 }
 
-.margin {
-    &--bottom {
-        &_primary {
-            margin-bottom: 20px;
-        }
-        &_secondary {
+.box {
+    &--width_full {
+        width: 100%;
+    }
+    &--margin_bottom {
+        
+        &_10 {
             margin-bottom: 10px;
         }
-    }
-    &--vertical_center {
-        margin: auto 0;
-    }
-}
-.padding {
-    &--bottom {
-        &_primary {
-            padding-bottom: 20px;
+        &_20 {
+            margin-bottom: 20px;
         }
-        &_secondary {
+        &_80 {
+            margin-bottom: 80px;
+            @media (min-width: 768px) {
+                &_media_md {
+                    margin-bottom: 80px;
+                }
+            }
+            @media (min-width: 992px) {
+                &_media_lg {
+                    margin-bottom: 80px;
+                }
+            }
+        }
+    }
+    &--padding_bottom {
+        &_10 {
             padding-bottom: 10px;
         }
+        &_20 {
+            padding-bottom: 20px;
+        }
+    }
+    &--shadow_primary {
+        box-shadow: 0px 0px 10px -5px #888888;
+    
+    
+    
     }
 }
 

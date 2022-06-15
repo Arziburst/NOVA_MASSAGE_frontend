@@ -1,4 +1,4 @@
-<section class="main section section--full_screen row">
+<section id="main" class="main section section--full_screen row">
     <div class="wrapper grid">
         <div class="grid--order_1">
             <h1
@@ -11,85 +11,26 @@
             </h4>
         </div>
         <div class="grid--order_2 row row--justify_content_center">
-            <div class="card__wrapper">
+            <div class="position--relative">
                 <div class="photo_wrapper">
                     <div class="photo">
                         <img src="./assets/photoMaster.png" class="photo__image" alt="Фотография Бортникова Бориса">
                         <div class="photo__cycle"></div>
                     </div>
                 </div>
-                <div class="card card__element_1 border--radius ">
-                    <h5 class="card__title text--center font--family_primary font--weight_900 font--color_secondary">
-                        3 сеанса
-                    </h5>
-                    <p class="card__text text--center font--family_primary font--weight_300 font--color_secondary">
-                        Результат
-                    </p>
-                </div>
-                <div class="card card__element_svg_1 border--radius ">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                        viewBox="0 0 256 256" xml:space="preserve">
-                        <desc>Created with Fabric.js 1.7.22</desc>
-                        <g transform="translate(128 128) scale(0.72 0.72)" style="">
-                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                                transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)">
-                                <path
-                                    d="M 77.955 6.892 C 69.085 1.73 57.432 2.828 45 9.955 C 32.568 2.828 20.917 1.73 12.045 6.892 C 4.171 11.475 -0.325 20.677 0.019 31.507 c 0.509 16.037 12.24 38.767 43.64 54.467 c 0.422 0.211 0.882 0.316 1.342 0.316 s 0.919 -0.105 1.342 -0.316 c 31.399 -15.7 43.131 -38.431 43.64 -54.468 C 90.324 20.677 85.829 11.475 77.955 6.892 z M 30.033 18.419 c -0.285 1.632 -1.839 2.725 -3.471 2.44 c -2.877 -0.5 -4.89 0.985 -6.067 2.321 c -2.739 3.106 -3.575 8.147 -2.13 12.843 c 0.487 1.584 -0.401 3.263 -1.985 3.75 c -0.294 0.091 -0.591 0.134 -0.883 0.134 c -1.282 0 -2.47 -0.829 -2.866 -2.119 c -2.045 -6.646 -0.725 -13.938 3.364 -18.575 c 3.052 -3.463 7.282 -5.016 11.599 -4.265 C 29.225 15.233 30.317 16.787 30.033 18.419 z"
-                                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;"
-                                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            </g>
-                        </g>
-                    </svg>
-                </div>
 
-                <div class="card card__element_2 border--radius ">
-                    <h5 class="card__title text--center font--family_primary font--weight_900 font--color_secondary">
-                        5 лет
-                    </h5>
-                    <p class="card__text text--center font--family_primary font--weight_300 font--color_secondary">
-                        Опыта
-                    </p>
-                </div>
+                {{> ../../elements/mainCard/index.handlebars card=1 title='3 сеанса' text='Результат'}}
+                {{> ../../elements/mainCard/index.handlebars svgHeart=true}}
+                {{> ../../elements/mainCard/index.handlebars card=2 title='5 лет' text='Опыта'}}
+                {{> ../../elements/mainCard/index.handlebars svgShield=true}}
+                {{> ../../elements/mainCard/index.handlebars card=3 title='1000+' text='Довольных клиентов'}}
+                {{> ../../elements/mainCard/index.handlebars svgPlus=true}}
 
-                <div class="card card__element_svg_2 border--radius ">
-                    <svg viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-shield-plus">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <path
-                                d="M2,1.961 L2,8.035 C2,13.051 8.546,15.948 8.546,15.948 C8.546,15.948 14.969,13.218 14.969,8.019 C14.969,2.823 14.971,1.96 14.971,1.96 C14.971,1.96 12.094,0.011 8.546,0.011 C4.998,0.011 2,1.961 2,1.961 Z M11.031,8.062 L9,8.062 L9,10 L7.938,10 L7.938,8.062 L6,8.062 L6,7 L7.938,7 L7.938,4.938 L9,4.938 L9,7 L11.031,7 L11.031,8.062 L11.031,8.062 Z"
-                                fill="#434343" class="si-glyph-fill"></path>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="card card__element_3 border--radius ">
-                    <h5 class="card__title text--center font--family_primary font--weight_900 font--color_secondary">
-                        1000+
-                    </h5>
-                    <p class="card__text text--center font--family_primary font--weight_300 font--color_secondary">
-                        Довольных клиентов
-                    </p>
-                </div>
-
-                <div class="card card__element_svg_3 border--radius ">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400.309 400.309"
-                        style="enable-background:new 0 0 400.309 400.309;" xml:space="preserve">
-                        <g>
-                            <path d="M380.005,0H20.304C9.089,0,0.001,9.091,0.001,20.305v359.699c0,11.215,9.088,20.305,20.303,20.305h359.701
-        		c11.215,0,20.303-9.09,20.303-20.305v-359.7C400.308,9.091,391.22,0,380.005,0z M324.364,227.578
-        		c0,6.492-5.262,11.755-11.754,11.755h-73.276v73.278c0,6.49-5.263,11.754-11.755,11.754h-54.852
-        		c-6.49,0-11.752-5.264-11.752-11.754v-73.279H87.699c-6.492,0-11.756-5.262-11.756-11.752v-54.852
-        		c0-6.491,5.264-11.754,11.756-11.753h73.277V87.697c0-6.491,5.262-11.754,11.752-11.754h54.852c6.492,0,11.755,5.263,11.755,11.754
-        		v73.278h73.276c6.492,0,11.754,5.263,11.754,11.754V227.578z" />
-                        </g>
-                    </svg>
-                </div>
             </div>
         </div>
         <div class="grid--order_3">
             <button
-                class="control control--width_auto_media_lg control--bg_primary control--padding_primary border--radius margin--bottom_primary">
+                class="control control--width_auto_media_lg control--bg_primary control--padding_primary border--radius box--margin_bottom_20">
                 <p class="font--color_tertiary font--family_primary font--weight_700">Записаться</p>
             </button>
             <button

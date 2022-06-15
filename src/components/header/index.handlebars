@@ -10,31 +10,11 @@
             <span class="nav">
                 <nav class="nav__wrapper">
                     <ul class="nav__list_item">
-                        <li class="nav__item">
-                            <a href="#main" class="nav__item_link font--family_primary font--weight_300">
-                                Главная
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__item_link font--family_primary font--weight_300">
-                                Про меня
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#cost" class="nav__item_link font--family_primary font--weight_300">
-                                Цены
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#feedback" class="nav__item_link font--family_primary font--weight_300">
-                                Обратная связь
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__item_link font--family_primary font--weight_300">
-                                Контакты
-                            </a>
-                        </li>
+                        {{> ../../elements/navLink/index.handlebars text='Главная' href='#main'}}
+                        {{> ../../elements/navLink/index.handlebars text='Про меня' href='#about'}}
+                        {{> ../../elements/navLink/index.handlebars text='Цены' href='#cost'}}
+                        {{> ../../elements/navLink/index.handlebars text='Обратная связь' href='#feedback'}}
+                        {{> ../../elements/navLink/index.handlebars text='Контакты' href='#contact'}}
                     </ul>
                 </nav>
                 <a href='tel:063-174-0191' class="icon__phone">
