@@ -35,7 +35,7 @@
             right: 0%;
             transform: translate(0%, -50%);
             
-            @media (min-width: 600px) {
+            @media (min-width: 460px) {
                 transform: translate(50%, -50%);
             }
         }
@@ -67,11 +67,8 @@
             left: 0%;
             transform: translate(0%, -50%);
 
-            @media (min-width: 600px) {
+            @media (min-width: 460px) {
                 transform: translate(-50%, -50%);
-            }
-            @media (min-width: 992px) {
-                transform: translate(0%, -50%);
             }
             @media (min-width: 1050px) {
                 transform: translate(-50%, -50%);

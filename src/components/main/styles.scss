@@ -8,10 +8,12 @@ $changePositionElementsMedia: 992px;
 
 
 .main {
+    min-height: calc(100vh - 72px);
+    
     &__title {
         margin-top: 0px;
         margin-bottom: 0.5em;
-        @include adaptive-font(40, 30);
+        @include adaptive-font(40, 25);
     }
     &__subtitle {
         @include adaptive-font(20, 16);
@@ -29,7 +31,7 @@ $changePositionElementsMedia: 992px;
 
         position: relative;
 
-        $maxSize: 792px;
+        $maxSize: 360px;
         max-width: $maxSize;
         max-height: $maxSize;
         
@@ -65,7 +67,7 @@ $changePositionElementsMedia: 992px;
             @media (min-width: 400px) {
                 right: 2%;
             }
-            @media (min-width: 470px) {
+            @media (min-width: 1200px) {
                 right: 3%;
             }
             @media (min-width: 1300px) {
@@ -77,15 +79,15 @@ $changePositionElementsMedia: 992px;
         }
 
         @media (min-width: 500px) {
-            $size: 459px;
-            height: $size;
-            width: $size;
+            $size: 360px;
+            max-height: $size;
+            max-width: $size;
         }
 
         @media (min-width: 1200px) {
             $size: 40vw;
-            height: $size;
-            width: $size;
+            max-height: $size;
+            max-width: $size;
         }
         
         &__cycle {
@@ -109,12 +111,22 @@ $changePositionElementsMedia: 992px;
     }
     .grid {
         display: grid;
-        grid-row-gap: 40px;
+        grid-row-gap: 10px;
         grid-column-gap: 20px;
         align-items: center; 
         width: 100%;
+        grid-template-rows: auto calc(100vw - 40px) auto;
+
+        @media (min-height: 810px) {
+            grid-row-gap: 40px;
+        }
+
+        @media (min-width: 500px) {
+            grid-template-rows: auto 360px auto;
+        }
 
         @media (min-width: $changePositionElementsMedia) {
+            grid-template-rows: auto auto;
             grid-template-columns: 1fr 1fr;
             justify-content: space-between;
         }
@@ -124,6 +136,7 @@ $changePositionElementsMedia: 992px;
         
         &--order {
             &_1 {
+                align-self: end;
                 @media (min-width: $changePositionElementsMedia) {
                     grid-column: 1;
                     grid-row: 1 / 2;
@@ -140,8 +153,14 @@ $changePositionElementsMedia: 992px;
                 }
             }
             &_3 {
+                align-self: start;
+                    
                 & .control:first-of-type {
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
+
+                    @media (min-height: 800px) {
+                        margin-bottom: 20px;
+                    }
                    
                     @media (min-width: 992px) {
                         margin-bottom: 0px;
@@ -165,7 +184,6 @@ $changePositionElementsMedia: 992px;
                     grid-column: 1;
                     grid-row: 2 / 3;
                     order: 2;
-                    align-self: start;
                 }
             }
         }
