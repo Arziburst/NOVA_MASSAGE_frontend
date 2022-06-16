@@ -8,7 +8,10 @@
     z-index: 999;
 
     &--fix_size {
-        height: 72px;
+        height: 62px;
+        @media (min-height: 670px) {
+            height: 72px;
+        }
     }
 
     &__title {

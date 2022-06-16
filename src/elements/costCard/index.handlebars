@@ -1,16 +1,27 @@
-<div class="cost_card box--padding_bottom_10 border--radius box--shadow_primary {{classes}}">
+<div class="cost_card border--radius box--shadow_primary {{classes}}">
     <h4 class="cost_card__title text--center font--family_primary font--weight_700 font--color_primary">
         {{title}}
     </h4>
 
-    <img class="cost_card__img" src={{srcImg}} alt='{{altImg}}'>
+    <div class="cost_card__content">
+        <div class="cost_card__img">
+            <img src={{srcImg}} alt='{{altImg}}'>
+        </div>
 
-    <div class="cost_card__body">
-        <p class="cost_card__text text--center font--family_primary font--weight_300 font--color_primary">
-            {{text}}
-        </p>
+        <div class="cost_card__body">
+            <p class="cost_card__text text--center font--family_primary font--weight_300 font--color_primary">
+                {{text}}
+            </p>
 
-        <p>{{cost}}</p>
+            <div class="row row--justify_content_center row--align_items_end">
+                <p class="cost_card__value font--family_primary font--weight_700 font--color_primary">
+                    {{cost}}
+                </p>
+                <p class="cost_card__currency font--family_primary font--weight_300 font--color_secondary">
+                    &nbsp;грн
+                </p>
+            </div>
+        </div>
     </div>
 
 </div>

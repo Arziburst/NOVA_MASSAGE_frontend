@@ -81,9 +81,6 @@ a:hover {
     @media (min-width: 756px) {
         padding: 60px 0px;
     }
-    // @media (min-width: 1200px) {
-    //     padding: 80px 0px;
-    // }
 }
 
 .row {
@@ -123,8 +120,8 @@ a:hover {
         &_items_center {
             align-items: center;
         }
-        &_align_content {
-            align-content: center;
+        &_items_end {
+            align-items: flex-end;
         }
     }
     &--direction {
