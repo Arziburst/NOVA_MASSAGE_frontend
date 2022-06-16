@@ -72,15 +72,15 @@ Best comments names:
 
 local:
 ### `npm run build`
-### `docker build -t [dokerId]/[imageName] .`
+### `docker build -t arziburst/norkamasagerka .`
 
-### `docker push [dokerId]/[imageName]`
+### `docker push arziburst/norkamasagerka`
 
 Remote:
-### `docker pull [dokerId]/[imageName]`
-### `docker tag [dokerId]/[imageName] dokku/[appName]`
+### `docker pull arziburst/norkamasagerka`
+### `docker tag arziburst/norkamasagerka dokku/frontend`
 
-### `dokku tags:deploy [appName]`
+### `dokku tags:deploy frontend`
 ### `dokku [module]:[report|help]`
 
 Mini Dokku docs:
