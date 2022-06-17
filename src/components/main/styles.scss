@@ -83,7 +83,33 @@ $changePositionElementsMedia: 992px;
             height: $size;
             width: $size;
 
-            $sizeMax: 760px;
+            $sizeMax: 750px;
+            max-height: $sizeMax;
+            max-width: $sizeMax;
+        }
+
+        @media (min-width: 992px) and (min-height: 500px) {
+            $size: calc(100vh - 72px - 120px);
+            height: $size;
+            width: $size;
+
+            $sizeMax: 410px;
+            max-height: $sizeMax;
+            max-width: $sizeMax;
+        }
+        @media (min-width: 1200px) and (min-height: 700px) {
+            $sizeMax: 490px;
+            max-height: $sizeMax;
+            max-width: $sizeMax;
+        }
+        @media (min-width: 1700px) and (min-height: 800px) {
+            $sizeMax: 670px;
+            max-height: $sizeMax;
+            max-width: $sizeMax;
+        }
+
+        @media (min-width: 1800px) and (min-height: 900px) {
+            $sizeMax: 750px;
             max-height: $sizeMax;
             max-width: $sizeMax;
         }

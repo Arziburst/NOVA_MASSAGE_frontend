@@ -6,7 +6,7 @@
         padding: 15px;
     }
 
-    @media (min-width: 1400px) {
+    @media (min-width: 1400px) and (min-height: 700px) {
         padding: 20px;
     }
 
@@ -28,6 +28,10 @@
             top: 10%;
             left: 0%;
             transform: translate(0%, 0%);
+            @media (min-width: 992px) and (max-height: 600px) {
+                top: 0%;
+                transform: translate(-25%, -25%); 
+            }
         }
         &_2 {
             position: absolute;
@@ -44,6 +48,11 @@
             top: 80%;
             left: 0%;
             transform: translate(0%, 0%);
+            @media (min-width: 992px) and (max-height: 600px) {
+                top: auto;
+                bottom: 0%;
+                transform: translate(-25%, 25%); 
+            }
         }
 
         @for $i from 1 through 3 {
@@ -60,6 +69,9 @@
             top: 10%;
             right: 10%;
             transform: translate(0%, 0%);
+            @media (max-width: 1700px) {
+                transform: translate(20%, 0%); 
+            }
         }
         &_svg_2 {
             position: absolute;
@@ -79,6 +91,9 @@
             top: 80%;
             right: 10%;
             transform: translate(0%, 0%);
+            @media (max-width: 1700px) {
+                transform: translate(10%, 0%); 
+            }
         }
         @for $i from 1 through 3 {
             &_svg_#{$i} {
@@ -92,7 +107,7 @@
                         width: calc($cardElementSvgSize + 5px);
                         height: auto;
                     }
-                    @media (min-width: 1400px) {
+                    @media (min-width: 1400px) and (min-height: 600px) {
                         width: calc($cardElementSvgSize + 10px);
                         height: auto;
                     }
