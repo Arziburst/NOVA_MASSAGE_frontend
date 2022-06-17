@@ -78,16 +78,14 @@ $changePositionElementsMedia: 992px;
             }
         }
 
-        @media (min-width: 500px) {
-            $size: 360px;
-            max-height: $size;
-            max-width: $size;
-        }
-
         @media (min-width: 1200px) {
             $size: 40vw;
-            max-height: $size;
-            max-width: $size;
+            height: $size;
+            width: $size;
+
+            $sizeMax: 760px;
+            max-height: $sizeMax;
+            max-width: $sizeMax;
         }
         
         &__cycle {
