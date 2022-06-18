@@ -88,7 +88,7 @@ $changePositionElementsMedia: 992px;
             max-width: $sizeMax;
         }
 
-        @media (min-width: 992px) and (min-height: 500px) {
+        @media (min-width: 992px) and (min-height: 0px) {
             $size: calc(100vh - 72px - 120px);
             height: $size;
             width: $size;
