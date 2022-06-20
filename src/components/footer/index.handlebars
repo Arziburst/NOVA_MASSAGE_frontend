@@ -1,6 +1,6 @@
 <footer class="footer section section--full_screen section--center">
-    <div class="footer_wrapper wrapper box--width_full">
-        <form class="form" id="feedback">
+    <form class="footer_wrapper wrapper box--width_full">
+        <div class="footer__order_1 form" id="feedback">
             <input
                 class="form__input control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
                 name="firstName" type="text" placeholder="Имя">
@@ -16,7 +16,8 @@
             <textarea
                 class="form__textarea control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
                 name="text" placeholder="Вопрос"></textarea>
-
+        </div>
+        <div class="footer__order_2 row--flex row--justify_content_center">
             <button
                 class="form__submit control control--actions control--bg_primary control--padding_primary border--radius"
                 type="submit">
@@ -24,8 +25,8 @@
                     Отправить
                 </span>
             </button>
-        </form>
-        <div class="contact" id="contact">
+        </div>
+        <div class="footer__order_3 contact" id="contact">
             <div class="contact__section row row--direction">
                 <h6 class="contact__title font--color_primary font--family_primary font--weight_700">
                     Телефон
@@ -73,5 +74,6 @@
                 </p>
             </div>
         </div>
-    </div>
+
+    </form>
 </footer>

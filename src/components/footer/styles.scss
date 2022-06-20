@@ -6,12 +6,35 @@
     $mediaWidthFooterAndAdaptiveSecondCell: 1500px;
     $secondValueWidthFooterAndAdaptiveSecondCell: 50%;
 
-    .footer_wrapper {
-        display: flex;
-        flex-direction: column;
+    &__order {
+        &_1 {
+        }
+        &_2 {
+            margin-top: 10px;
+            margin-bottom: 5vh;
+            
+            @media (min-width: $changePositionElements) {
+                order: 3;
+                margin-top: 30px;
+                margin-bottom: 0px;
+            }
+        }
+        &_3 {
+            @media (min-width: $changePositionElements) {
+                order: 2;
+            }
+        }
+    }
 
-        row-gap: 70px;
+    &_wrapper {
+        display: grid;
+        // grid-template-columns: 1fr 1fr;
+
         column-gap: 50px;
+
+        @media (min-width: $changePositionElements) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         @media (min-width: $changePositionElements) {
             flex-direction: row;
