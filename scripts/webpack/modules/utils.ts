@@ -5,6 +5,7 @@ import {
 } from 'webpack';
 import WebpackBar from 'webpackbar';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import HtmlMinimizerPlugin from 'html-minimizer-webpack-plugin';
 import dotenv from 'dotenv';
 
 export const connectBuildProgressIndicator = (): Configuration => ({
@@ -42,3 +43,10 @@ export const defineEnvVariables = (): Configuration => {
         ],
     };
 };
+
+export const htmlMinimizer = (): Configuration => ({
+    optimization: {
+        minimize:  true,
+        minimizer: [ new HtmlMinimizerPlugin() ],
+    },
+});
