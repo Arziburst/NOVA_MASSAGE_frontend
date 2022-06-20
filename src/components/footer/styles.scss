@@ -1,17 +1,12 @@
 .footer {
     $changePositionElements: 992px;
 
-    $valueWidthFooterAndAdaptiveSecondCell: 50%;
-    
-    $mediaWidthFooterAndAdaptiveSecondCell: 1500px;
-    $secondValueWidthFooterAndAdaptiveSecondCell: 50%;
-
     &__order {
         &_1 {
         }
         &_2 {
             margin-top: 10px;
-            margin-bottom: 5vh;
+            margin-bottom: 80px;
             
             @media (min-width: $changePositionElements) {
                 order: 3;
@@ -28,7 +23,6 @@
 
     &_wrapper {
         display: grid;
-        // grid-template-columns: 1fr 1fr;
 
         column-gap: 50px;
 
@@ -46,16 +40,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex-basis: $valueWidthFooterAndAdaptiveSecondCell;
-            
-            // @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
-            //     max-width: 80%;
-            // }
-            
-
-            @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
-                flex-basis: $secondValueWidthFooterAndAdaptiveSecondCell;
-            }
             
             .control:not(:last-child) {
                 margin-bottom: 10px;
@@ -65,13 +49,12 @@
                 }
             }
 
-
             %commonStylesInput {
                 @include adaptive-font(20, 15);
                 &::placeholder {
                     color: rgba(0, 0, 0, 0.2);
                 }
-                @media (min-width: $changePositionElements) {
+                @media (min-width: $changePositionElements) and (min-height: 820px) {
                     padding: 30px;
                 }
             }
@@ -80,11 +63,14 @@
             }
             &__textarea {
                 @extend %commonStylesInput;
-                height: 150px;
                 resize: none;
-
                 @media (min-width: $changePositionElements) {
-                    height: 300px;
+                    height: 100%;
+                }
+                @media (min-width: 2000px) and (min-height: 1000px) {
+                   & {
+                     height: 300px;
+                   }
                 }
             }
             &__submit {
@@ -98,16 +84,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex-basis: #{100% - $valueWidthFooterAndAdaptiveSecondCell};
 
-            @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
-                flex-basis: #{100% - $secondValueWidthFooterAndAdaptiveSecondCell};
-            }
-            
             &__section {
 
                 &:not(:last-child) {
-                    margin-bottom: 15px;
+                    margin-bottom: 20px;
+                    @media (max-width: 576px) and (max-height: 700px) {
+                        margin-bottom: 5px;
+                    }
+                    @media (min-width: $changePositionElements) {
+                        margin-bottom: 30px;
+                    }
                 }
             }
             &__title {
@@ -115,18 +102,24 @@
                 margin-bottom: 10px;
                 
                 @media (min-width: $changePositionElements) {
-                    margin-bottom: 25px;
+                    margin-bottom: 20px;
                 }
                 @media (max-width: $changePositionElements) {
                     text-align: center;
+                }
+                @media (max-width: 576px) and (max-height: 700px) {
+                    margin-bottom: 5px;
                 }
             }
             &__text {
                 @include adaptive-font(20, 15);
                 &:not(:last-child) {
                     margin-bottom: 10px;
+                    @media (max-width: 576px) and (max-height: 700px) {
+                        margin-bottom: 0px;
+                    }
                     @media (min-width: $changePositionElements) {
-                        margin-bottom: 20px;
+                        margin-bottom: 15px;
                     }
                 }
                 @media (max-width: $changePositionElements) {
