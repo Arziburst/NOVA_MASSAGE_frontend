@@ -7,6 +7,7 @@
 @import "./components/main/styles.scss";
 @import "./components/about/styles.scss";
 @import "./components/cost/styles.scss";
+@import "./components/footer/styles.scss";
 
 // Elements
 @import "./elements/navLink/styles.scss";
@@ -167,10 +168,21 @@ a:hover {
     width: 100%;
     padding: 0;
     border: none;
-    font: inherit;
     color: inherit;
     background-color: transparent;
-    cursor: pointer;
+    opacity: 1;
+
+    &--actions {
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover, &:focus {
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }
+    }
 
     &--padding {
         &_primary {
@@ -178,6 +190,11 @@ a:hover {
             &.border--size_primary {
                 padding: #{$controlPadding - 2px};
             }
+        }
+    }
+    &--margin {
+        &_primary {
+            margin: 15px;
         }
     }
 
@@ -229,6 +246,9 @@ a:hover {
 }
 
 .box {
+    &--display_inline_block {
+        display: inline-block;
+    }
     &--width_full {
         width: 100%;
     }

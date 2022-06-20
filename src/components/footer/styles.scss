@@ -1,0 +1,114 @@
+.footer {
+    $changePositionElements: 992px;
+
+    $valueWidthFooterAndAdaptiveSecondCell: 50%;
+    
+    $mediaWidthFooterAndAdaptiveSecondCell: 1200px;
+    $secondValueWidthFooterAndAdaptiveSecondCell: 50%;
+
+    .footer_wrapper {
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 70px;
+        column-gap: 50px;
+
+        @media (min-width: $changePositionElements) {
+            flex-direction: row;
+        }
+    
+        .form {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-basis: $valueWidthFooterAndAdaptiveSecondCell;
+            
+            @media (max-width: $mediaWidthFooterAndAdaptiveSecondCell) {
+                max-width: 516px;
+            }
+
+            @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
+                flex-basis: $secondValueWidthFooterAndAdaptiveSecondCell;
+            }
+            
+            .control:not(:last-child) {
+                margin-bottom: 10px;
+                
+                @media (min-width: $changePositionElements) {
+                    margin-bottom: 30px;
+                }
+            }
+
+
+            %commonStylesInput {
+                @include adaptive-font(20, 15);
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0.2);
+                }
+                @media (min-width: $changePositionElements) {
+                    padding: 30px;
+                }
+            }
+            &__input {
+                @extend %commonStylesInput;
+            }
+            &__textarea {
+                @extend %commonStylesInput;
+                height: 150px;
+                resize: none;
+
+                @media (min-width: $changePositionElements) {
+                    height: 300px;
+                }
+            }
+            &__submit {
+                @media (min-width: 576px) {
+                    width: auto;
+                    padding: 15px 100px;
+                }
+            }
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-basis: #{100% - $valueWidthFooterAndAdaptiveSecondCell};
+
+            @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
+                flex-basis: #{100% - $secondValueWidthFooterAndAdaptiveSecondCell};
+            }
+            
+            &__section {
+
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+            &__title {
+                @include adaptive-font(25, 15);
+                margin-bottom: 10px;
+                
+                @media (min-width: $changePositionElements) {
+                    margin-bottom: 25px;
+                }
+                @media (max-width: $changePositionElements) {
+                    text-align: center;
+                }
+            }
+            &__text {
+                @include adaptive-font(20, 15);
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                    @media (min-width: $changePositionElements) {
+                        margin-bottom: 20px;
+                    }
+                }
+                @media (max-width: $changePositionElements) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
