@@ -9,6 +9,8 @@ $changePositionElementsMedia: 992px;
 
 .main {
     min-height: calc(100vh - 72px);
+    // todo !important
+    padding: 0px !important;
     
     &__title {
         margin-top: 0px;

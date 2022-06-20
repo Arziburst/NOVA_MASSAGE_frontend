@@ -1,18 +1,10 @@
 @import "../../assets/variables.scss";
 
 .header {
-    width: 100%;
+    // width: 100%;
     padding: 15px 0px;
     box-shadow: 0px 4px 4px rgba(73, 107, 155, 0.15);
     background-color: white;
-    z-index: 999;
-
-    &--fix_size {
-        height: 62px;
-        @media (min-height: 670px) {
-            height: 72px;
-        }
-    }
 
     &__title {
         @include adaptive-font(20, 15);

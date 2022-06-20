@@ -25,9 +25,10 @@
             align-items: center;
             flex-basis: $valueWidthFooterAndAdaptiveSecondCell;
             
-            @media (max-width: $mediaWidthFooterAndAdaptiveSecondCell) {
-                max-width: 516px;
-            }
+            // @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
+            //     max-width: 80%;
+            // }
+            
 
             @media (min-width: $mediaWidthFooterAndAdaptiveSecondCell) {
                 flex-basis: $secondValueWidthFooterAndAdaptiveSecondCell;
@@ -65,7 +66,7 @@
             }
             &__submit {
                 @media (min-width: 576px) {
-                    width: auto;
+                    width: 75%;
                     padding: 15px 100px;
                 }
             }
