@@ -5,10 +5,10 @@
     &__title {
         margin-top: 1em;
         margin-bottom: 0.5em;
-        @include adaptive-font(25, 20);
+        @include adaptive-font(25, 22);
     }
     &__text {
         margin-bottom: 2em;
-        @include adaptive-font(20, 15);
+        @include adaptive-font(20, 18);
     }
 }

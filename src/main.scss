@@ -67,7 +67,9 @@ a:hover {
     }
 
     &--full_screen {
-        min-height: 100vh;
+        @media (min-width: 992px) {
+            min-height: 100vh;
+        }
     }
     &--center {
         display: flex;

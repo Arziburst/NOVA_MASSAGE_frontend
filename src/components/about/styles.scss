@@ -1,7 +1,7 @@
 .about {
     &__text {
         margin-bottom: 1em;
-        @include adaptive-font(25, 15);
+        @include adaptive-font(26, 18);
     }
     &__line {
         border: none;
@@ -20,7 +20,7 @@
         background-image: url('../../assets/images/imageMakeMassage.png');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: bottom;
+        background-position: center;
     }
 }
 

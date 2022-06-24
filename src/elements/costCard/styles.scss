@@ -4,6 +4,8 @@
     $paddingDesktop: 30px; 
     $mediaChange: 576px;
 
+    flex: 1;
+
     padding-top: $paddingMobile;
 
     @media (min-width: $mediaChange) {
@@ -22,14 +24,14 @@
 
 
     &__title {
-        @include adaptive-font(25, 20);
+        @include adaptive-font(25, 24);
         padding-bottom: 1em;
         
         @media (min-width: $mediaChange) {
         }
     }
     &__text {
-        @include adaptive-font(20, 15);
+        @include adaptive-font(20, 18);
         margin-bottom: 1em;
     }
     &__value {

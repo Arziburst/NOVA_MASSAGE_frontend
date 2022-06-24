@@ -6,10 +6,10 @@
     background-color: white;
 
     &__title {
-        @include adaptive-font(20, 15);
+        @include adaptive-font(20, 16);
     }
     &__subtitle {
-        @include adaptive-font(16, 12);
+        @include adaptive-font(16, 14);
     }
     
     .nav {

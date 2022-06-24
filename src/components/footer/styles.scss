@@ -112,7 +112,7 @@
                 }
             }
             &__title {
-                @include adaptive-font(25, 15);
+                @include adaptive-font(25, 18);
                 margin-bottom: 10px;
                 
                 @media (min-width: $changePositionElements) {
@@ -129,7 +129,7 @@
                 }
             }
             &__text {
-                @include adaptive-font(20, 15);
+                @include adaptive-font(20, 16);
                 &:not(:last-child) {
                     margin-bottom: 10px;
                     @media (max-width: 576px) and (max-height: 700px) {
