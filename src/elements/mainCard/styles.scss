@@ -2,7 +2,7 @@
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
 
-    @media (min-width: 510px) {
+    @media (min-width: 510px) and (min-height: 576px) {
         padding: 15px;
     }
 
@@ -11,20 +11,21 @@
     }
 
     &__title {
-        @include adaptive-font(25, 15);
         margin-bottom: 5px;
+        @include adaptive-font(25, 15);
         
+        @media (min-width: 576px) and (max-width: 768px) and (max-height: 768px) {
+            font-size: 15px;
+        }
         @media (min-width: 1200px) {
             margin-bottom: 10px;
-        }
-        @media (max-height: 550px) and (min-width: 992px) {
-            font-size: 15px;
         }
     }
     &__text {
         @include adaptive-font(20, 12);
-        @media (max-height: 550px) and (min-width: 992px) {
-            font-size: 12px;
+
+        @media (min-width: 576px) and (max-width: 768px) and (max-height: 768px) {
+            font-size: 15px;
         }
     }
     
@@ -34,7 +35,8 @@
             top: 10%;
             left: 0%;
             transform: translate(0%, 0%);
-            @media (min-width: 992px) and (max-height: 550px) {
+            
+            @media (max-width: 992px) and (max-height: 550px) {
                 transform: translate(-25%, -25%); 
             }
         }
@@ -45,6 +47,12 @@
             transform: translate(0%, -50%);
             
             @media (min-width: 460px) {
+                transform: translate(50%, -50%);
+            }
+            @media (min-width: 576px) and (max-height: 576px) {
+                transform: translate(0%, -50%);
+            }
+            @media (min-width: 768px) {
                 transform: translate(50%, -50%);
             }
         }
@@ -58,10 +66,15 @@
                 bottom: 0%;
                 transform: translate(-25%, 25%); 
             }
+            @media (max-width: 992px) and (max-height: 550px) {
+                transform: translate(-25%, -25%); 
+            }
         }
         @for $i from 1 through 3 {
             &_#{$i} {
-                
+                @media (max-height: 320px) {
+                    display: none;
+                }
             }
         }
 
@@ -99,15 +112,20 @@
         }
         @for $i from 1 through 3 {
             &_svg_#{$i} {
+                $cardElementSvgSize: 25px;
+
                 svg {
                     width: $cardElementSvgSize;
                     height: auto;
                     path {
                         fill: $colorPrimary;
                     }
-                    @media (min-width: 400px) {
+                    @media (min-width: 400px)   {
                         width: calc($cardElementSvgSize + 5px);
                         height: auto;
+                    }
+                    @media (min-width: 576px) and (max-width: 992px) and (max-height: 576px) {
+                        width: 20px;
                     }
                     @media (min-width: 1400px) and (min-height: 550px) {
                         width: calc($cardElementSvgSize + 10px);
@@ -116,9 +134,6 @@
                     @media (min-width: 992px) and (max-height: 500px) {
                         width: 20px;
                     }
-                }
-                @media (min-width: 992px) and (max-height: 430px) {
-                    display: none;
                 }
             }
         }
