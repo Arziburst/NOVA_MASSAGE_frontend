@@ -1,11 +1,4 @@
 .about {
-    &__title {
-        margin-bottom: 0.7em;
-        @include adaptive-font(36, 30);
-        @media (min-width: 768px) {
-            margin-bottom: 1em;
-        }
-    }
     &__text {
         margin-bottom: 1em;
         @include adaptive-font(25, 15);
