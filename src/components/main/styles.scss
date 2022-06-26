@@ -58,38 +58,6 @@ $changePositionElementsMedia: 992px;
         
         border-radius: 50%;
         border: $borderWidthCycle solid #d2ecf7;
-        
-        @media (max-width: 576px) and (max-height: 850px) and (orientation: portrait) {
-            $maxSize: 340px;
-            max-width: $maxSize;
-            max-height: $maxSize;
-        }
-
-        @media (max-width: 576px) and (max-height: 780px) and (orientation: portrait) {
-            $maxSize: 300px;
-            max-width: $maxSize;
-            max-height: $maxSize;
-        }
-        @media (max-width: 576px) and (max-height: 730px) and (orientation: portrait) {
-            $maxSize: 280px;
-            max-width: $maxSize;
-            max-height: $maxSize;
-        }
-        @media (max-width: 576px) and (max-height: 700px) and (orientation: portrait) {
-            $maxSize: 250px;
-            max-width: $maxSize;
-            max-height: $maxSize;
-        }
-        @media (max-width: 576px) and (max-height: 670px) and (orientation: portrait) {
-            $maxSize: 220px;
-            max-width: $maxSize;
-            max-height: $maxSize;
-        }
-        @media (max-width: 576px) and (max-height: 650px) and (orientation: portrait) {
-            $maxSize: 200px;
-            max-width: $maxSize;
-            max-height: $maxSize;
-        }
 
         @media (min-width: 768px) and (min-height: 567px) {
             $maxSize: 360px;
@@ -101,12 +69,21 @@ $changePositionElementsMedia: 992px;
             max-width: $maxSize;
             max-height: $maxSize;
         }
-
         @media (max-height: 576px) and (min-width: 576px) {
             $size: calc(100vh - #{$borderWidthCycle * 2} - 40px);
             height: $size;
             width: $size;
         }
+        @media (max-width: 416px) and (max-height: 900px) and (orientation: portrait) {
+            $size: calc(35vh);
+            width: $size;
+            height: $size;
+
+            $maxSize: calc(100vw - 40px );
+            max-width: $maxSize;
+            max-height: $maxSize;
+        }
+
         @media (min-width: 1200px) and (min-height: 700px) {
             $sizeMax: 490px;
             max-height: $sizeMax;
@@ -163,8 +140,6 @@ $changePositionElementsMedia: 992px;
                 right: 4.5%;
             }
         }
-
-        
         
         &__cycle {
             position: relative;
@@ -192,20 +167,14 @@ $changePositionElementsMedia: 992px;
         align-items: center; 
         width: 100%;
         height: 100%;
-        @media (max-width: 576px) and (max-height: 900px) and (orientation: portrait) {
-            padding-top: 20px;
-            height: auto;
-            grid-row-gap: 6vh;
+
+        @media (min-height: 850px) {
+            grid-template-rows: auto auto auto;
         }
-        @media (max-width: 416px) and (max-height: 900px) and (orientation: portrait) {
-            grid-row-gap: 3vh;
-        }
-        @media (max-width: 576px) and (max-height: 700px) and (orientation: portrait) {
-            padding-top: 10px;
-        }
-        
+
         &--order {
             &_1 {
+                padding-top: 10px;
                 align-self: end;
 
                 @media (min-width: 576px) and (max-width: 992px) {
@@ -271,6 +240,9 @@ $changePositionElementsMedia: 992px;
                     justify-self: start;
                     grid-column: 1;
                     grid-row: 2 / 3;
+                }
+                @media (max-width: 576px) and (orientation: portrait) {
+                    padding-bottom: 70px;
                 }
 
                 & .control:first-of-type {
