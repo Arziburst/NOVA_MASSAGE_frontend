@@ -1,44 +1,46 @@
 <section class="main row">
-    <div class="wrapper grid">
-        <div class="grid--order_1">
-            <h1 class="row font--family_primary font--weight_700 font--color_primary main__title">
-                Японская массажная терапия
-            </h1>
-            <h4 class="row font--family_primary font--weight_300 font--color_secondary main__subtitle">
-                Реабилитационный массаж в японском исполнении
-            </h4>
-        </div>
-        <div class="grid--order_2 row">
-            <div class="position--relative">
-                <div class="photo_wrapper">
-                    <div class="photo">
-                        <img src="./assets/photoMaster.png" class="photo__image" alt="Фотография Бортникова Бориса">
-                        <div class="photo__cycle"></div>
-                    </div>
-                </div>
-
-                {{> ../../elements/mainCard/index.handlebars card=1 title='3 сеанса' text='Результат'}}
-                {{> ../../elements/mainCard/index.handlebars svgHeart=true}}
-                {{> ../../elements/mainCard/index.handlebars card=2 title='5 лет' text='Опыта'}}
-                {{> ../../elements/mainCard/index.handlebars svgShield=true}}
-                {{> ../../elements/mainCard/index.handlebars card=3 title='1000+' text='Довольных клиентов'}}
-                {{> ../../elements/mainCard/index.handlebars svgPlus=true}}
-
+    <div class="wrapper" style="width: 100%">
+        <div class="grid">
+            <div class="grid--order_1">
+                <h1 class="row font--family_primary font--weight_700 font--color_primary main__title">
+                    Японская массажная терапия
+                </h1>
+                <h4 class="row font--family_primary font--weight_300 font--color_secondary main__subtitle">
+                    Реабилитационный массаж в японском исполнении
+                </h4>
             </div>
-        </div>
-        <div class="grid--order_3">
-            <a href="#feedback"
-                class="control text--center box--display_inline_block control--actions control--bg_primary control--padding_primary border--radius">
-                <span class="font--color_tertiary font--family_primary font--weight_700">
-                    Записаться
-                </span>
-            </a>
-            <a href="#about"
-                class="control text--center box--display_inline_block control--actions control--bg__secondary control--padding_primary border--radius border--size_primary">
-                <span class="text--center font--color_primary font--family_primary font--weight_700">
-                    Подробней отехнике
-                </span>
-            </a>
+            <div class="grid--order_2 row">
+                <div class="position--relative">
+                    <div class="photo_wrapper">
+                        <div class="photo">
+                            <img src="./assets/photoMaster.png" class="photo__image" alt="Фотография Бортникова Бориса">
+                            <div class="photo__cycle"></div>
+                        </div>
+                    </div>
+
+                    {{> ../../elements/mainCard/index.handlebars card=1 title='3 сеанса' text='Результат'}}
+                    {{> ../../elements/mainCard/index.handlebars svgHeart=true}}
+                    {{> ../../elements/mainCard/index.handlebars card=2 title='5 лет' text='Опыта'}}
+                    {{> ../../elements/mainCard/index.handlebars svgShield=true}}
+                    {{> ../../elements/mainCard/index.handlebars card=3 title='1000+' text='Довольных клиентов'}}
+                    {{> ../../elements/mainCard/index.handlebars svgPlus=true}}
+
+                </div>
+            </div>
+            <div class="grid--order_3">
+                <a href="#feedback"
+                    class="control text--center box--display_inline_block control--actions control--bg_primary control--padding_primary border--radius">
+                    <span class="font--color_tertiary font--family_primary font--weight_700">
+                        Записаться
+                    </span>
+                </a>
+                <a href="#about"
+                    class="control text--center box--display_inline_block control--actions control--bg__secondary control--padding_primary border--radius border--size_primary">
+                    <span class="text--center font--color_primary font--family_primary font--weight_700">
+                        Подробней отехнике
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
