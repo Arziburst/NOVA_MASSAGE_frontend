@@ -171,19 +171,12 @@ $changePositionElementsMedia: 992px;
         padding-top: 10px;
         padding-bottom: 10px;
 
-        // padding-bottom: 70px;
-
-        // @media (min-width: 360px) and (max-width: 416px) and (max-height: 730px) and (orientation: portrait) {
-
-        // }
-        
         @media (max-width: 576px) and (orientation: portrait) {
             grid-template-rows: auto auto auto;
         }
 
         &--order {
             &_1 {
-                // padding-top: 10px;
                 align-self: end;
                 
                 @media (max-width: 576px) and (orientation: portrait) {
@@ -254,9 +247,6 @@ $changePositionElementsMedia: 992px;
                     justify-self: start;
                     grid-column: 1;
                     grid-row: 2 / 3;
-                }
-                @media (max-width: 576px) and (orientation: portrait) {
-                    // padding-bottom: 80px;
                 }
 
                 & .control:first-of-type {
