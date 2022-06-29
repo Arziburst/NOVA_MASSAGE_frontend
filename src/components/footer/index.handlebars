@@ -1,9 +1,9 @@
 <footer class="footer section section--full_screen section--center">
-    <form class="footer_wrapper wrapper box--width_full">
+    <form class="footer_wrapper wrapper box--width_full" id="feedbackForm">
         <div class="footer__order_1 form" id="feedback">
             <input
                 class="form__input control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
-                name="firstName" type="text" placeholder="Имя" required>
+                name="name" type="text" placeholder="Имя" required>
 
             <input
                 class="form__input control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
@@ -11,12 +11,12 @@
 
             <textarea
                 class="form__textarea control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
-                name="text" placeholder="Вопрос" required></textarea>
+                name="question" placeholder="Вопрос"></textarea>
         </div>
         <div class="footer__order_2 row--flex row--justify_content_center">
             <button
-                class="form__submit control control--actions control--bg_primary control--padding_primary border--radius"
-                type="submit">
+                type="submit"
+                class="form__submit control control--actions control--bg_primary control--padding_primary border--radius">
                 <span class="font--color_tertiary font--family_primary font--weight_700">
                     Отправить
                 </span>
@@ -28,10 +28,10 @@
                     Телефон
                 </h6>
                 <p class="contact__text font--color_secondary font--family_primary font--weight_400">
-                    +38 (096) - 170 - 53 - 76
+                    +38 (096) 170 53 76
                 </p>
                 <p class="contact__text font--color_secondary font--family_primary font--weight_400">
-                    +38 (050) - 687 - 76 - 85
+                    +38 (050) 687 76 85
                 </p>
             </div>
             <div class="contact__section row row--direction">
@@ -52,6 +52,5 @@
                 </p>
             </div>
         </div>
-
     </form>
 </footer>
