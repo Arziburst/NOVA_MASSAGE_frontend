@@ -1,5 +1,5 @@
 .footer {
-    $changePositionElements: 992px;
+    $changePositionElements: 991px;
 
     &__order {
         &_1 {
@@ -10,11 +10,11 @@
             margin-bottom: 50px;
             
             @media (min-height: 750px) {
-                margin-bottom: 80px;
+                margin-bottom: 40px;
             }
             @media (min-width: $changePositionElements) {
                 order: 3;
-                margin-top: 30px;
+                margin-top: 15px;
                 margin-bottom: 0px;
             }
         }
@@ -43,13 +43,21 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+
+            &__title {
+                margin-bottom: 15px;
+                @include adaptive-font(24, 18);
+
+                @media (min-width: $changePositionElements) {
+                    margin-bottom: 20px;
+                }
+            }
             
             .control:not(:last-child) {
                 margin-bottom: 10px;
                 
                 @media (min-width: $changePositionElements) {
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
                 }
             }
 
@@ -57,14 +65,14 @@
                 @include adaptive-font(20, 15);
                 
                 &:hover, &:focus {
-                    border-color: rgba($colorPrimary, .5);;
+                    border-color: rgba($colorPrimary, .5);
                 }
                 
                 &::placeholder {
                     color: rgba(0, 0, 0, 0.2);
                 }
                 @media (min-width: $changePositionElements) and (min-height: 820px) {
-                    padding: 30px;
+                    padding: 20px;
                 }
             }
             &__input {
@@ -76,16 +84,18 @@
                 resize: none;
 
                 @media (min-width: $changePositionElements) and (min-height: 576px) {
-                    height: 300px;
-                }
-                @media (min-width: 2000px) and (min-height: 1000px) {
-                    height: 300px;
+                    height: 200px;
                 }
             }
             &__submit {
+                @include adaptive-font(20, 15);
+
                 @media (min-width: 576px) {
-                    width: 75%;
                     padding: 15px 100px;
+                }
+                
+                @media (min-width: 768px) {
+                    max-width: 300px;
                 }
             }
         }
@@ -110,7 +120,7 @@
                 }
             }
             &__title {
-                @include adaptive-font(25, 18);
+                @include adaptive-font(24, 18);
                 margin-bottom: 10px;
                 
                 @media (min-width: $changePositionElements) {
