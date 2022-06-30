@@ -1,20 +1,22 @@
 import { ChildNodeExtended, ContactUsInput } from './types';
 
-// const makeRequestToContactUs = async (body: ContactUsInput): Promise<boolean> => {
-//     const response = await fetch(`${process.env.API_URL}/contactUs`, {
-//         method:  'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(body),
-//     });
+const makeRequestToContactUs = async (body: ContactUsInput): Promise<boolean> => {
+    const response = await fetch(`${process.env.API_URL}/contactUs`, {
+        method:  'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+    });
 
-//     if (response.status !== 200) {
-//         throw new Error('makeRequestToContactUs failed');
-//     }
+    console.log('some text');
 
-//     return response.json();
-// };
+    if (response.status !== 200) {
+        throw new Error('makeRequestToContactUs failed');
+    }
+
+    return response.json();
+};
 
 
 const collectAllValuesFromFeedbackForm = async (event: Event) => {
@@ -26,14 +28,12 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
     const areaText = document.querySelector('#areaText');
     const areaTime = document.querySelector('#areaTime');
     const areaButton = document.querySelector('.area__button');
-    const formSubmit = document.querySelector('.form__submit');
+    const formSubmit:any = document.querySelector('.form__submit');
+    const areaLoading: any = document.querySelector('.area__loading');
 
-    const inputs = document.querySelectorAll('.form__input');
-    const textarea = document.querySelectorAll('.form__textarea');
-
+    const inputs = document.querySelectorAll('.form__input, .form__textarea');
 
     const footerOrder2: any = document.querySelector('.footer__order_2');
-
 
     if (
         feedback === null
@@ -44,42 +44,38 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
         || areaTime === null
         || areaTitle === null
         || areaText === null
+        || areaLoading === null
     ) {
         return;
     }
 
-    // const contactUsInput = Array.from(feedback.childNodes).reduce<ContactUsInput>(
-    //     (acc, inputElement: ChildNodeExtended) => {
-    //         if (!inputElement.attributes) {
-    //             return acc;
-    //         }
+    const contactUsInput = Array.from(inputs).reduce<ContactUsInput>(
+        (acc: any, inputElement: any) => {
+            if (!inputElement.name || !inputElement.value) {
+                return acc;
+            }
 
-    //         return {
-    //             ...acc,
-    //             [ inputElement.attributes.name.value ]: inputElement.value,
-    //         };
-    //     }, {},
-    // );
-
-    // const result = await makeRequestToContactUs(contactUsInput);
+            return {
+                ...acc,
+                [ inputElement.name ]: inputElement.value,
+            };
+        }, {},
+    );
 
 
-    //!!!!!!!!!
-
-
-    const changeDisabledForInputsAndTextarea = (boolean: boolean) => {
+    const changeDisabledForInputsAndSubmit = (boolean: boolean) => {
         inputs.forEach((element: any) => {
             element.disabled = boolean;
+            boolean ? element.style.opacity = '.5' : element.style.opacity = '1';
         });
-        textarea.forEach((element: any) => {
-            element.disabled = boolean;
-        });
+        formSubmit.disabled = boolean;
+        boolean ? formSubmit.style.opacity = '.5' : formSubmit.style.opacity = '1';
     };
-    changeDisabledForInputsAndTextarea(true);
+    changeDisabledForInputsAndSubmit(true);
 
+    areaLoading.style.display = 'block';
 
-    const result: any = true;
-    //! HERE MODAL APPEAR!!!
+    const result = await makeRequestToContactUs(contactUsInput);
 
 
     const getTime = () => {
@@ -95,6 +91,7 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
     if (result === true) {
         if (localStorage.getItem('time')) {
             areaTitle.innerHTML = 'Доступ закрыт';
+            areaLoading.style.display = 'none';
             getTime();
             setInterval(() => {
                 getTime();
@@ -110,6 +107,7 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
         areaTitle.innerHTML = 'Что-то пошло не так';
         areaText.innerHTML = 'Попытайтесь позже';
         areaText.classList.remove('font--color_gray');
+        areaLoading.style.display = 'none';
     }
 
 
@@ -118,7 +116,7 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
 
     areaButton.addEventListener('click', (event: Event) => {
         event.preventDefault();
-        changeDisabledForInputsAndTextarea(false);
+        changeDisabledForInputsAndSubmit(false);
         const area = document.querySelector('.area');
         const footerOrder2: any = document.querySelector('.footer__order_2');
 
@@ -129,11 +127,12 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
             });
         }
 
+        areaLoading.style.display = 'none';
         area?.classList.remove('area--active');
         footerOrder2.style.display = 'flex';
     });
 
-    // console.log('🚀result', result);
+    console.log('🚀result', result);
 };
 
 window.addEventListener('load', () => {

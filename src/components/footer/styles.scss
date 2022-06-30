@@ -1,6 +1,61 @@
 .footer {
     $changePositionElements: 991px;
 
+    .area {
+    display: none;
+    // background-color: rgba(0, 0, 0, 0.2) !important;
+
+    &__title {
+        @include adaptive-font(24, 22);
+    }
+
+    &__text {
+        @include adaptive-font(16, 14);
+    }
+
+    &__button {
+        width: auto;
+        min-width: 300px;
+    }
+
+    &__loading {
+        display: none;
+
+        &--animation_send {
+            -webkit-animation: animationRotate 2s infinite;
+            animation: animationRotate 2s infinite;
+            animation-timing-function: linear;
+        }
+    }
+
+    @keyframes animationRotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    &--active {
+        content: "";
+        background-color: white;
+        height: calc(100% + 4px);
+        width: calc(100% + 4px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+}
+
     &__order {
         &_1 {
             
@@ -44,56 +99,7 @@
             display: flex;
             flex-direction: column;
 
-            .area {
-                display: none;
-                // background-color: rgba(0, 0, 0, 0.2) !important;
-
-                &__title {
-                    @include adaptive-font(24, 22);
-                }
-
-                &__text {
-                    @include adaptive-font(16, 14);
-                }
-
-                &__button {
-                    width: auto;
-                    min-width: 300px;
-                }
-
-                &--animation_send {
-                    -webkit-animation: animationRotate 2s infinite;
-                    animation: animationRotate 2s infinite;
-                    animation-timing-function: linear;
-                }
-
-                @keyframes animationRotate {
-                    0% {
-                        transform: rotate(0deg);
-                    }
-                    100% {
-                        transform: rotate(360deg);
-                    }
-                }
-
-                &--active {
-                    content: "";
-                    background-color: white;
-                    height: 100%;
-                    width: calc(100% + 3px);
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                
-            }
+            
 
             &__title {
                 margin-bottom: 15px;
@@ -215,3 +221,4 @@
         }
     }
 }
+
