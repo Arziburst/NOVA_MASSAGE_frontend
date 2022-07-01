@@ -2,30 +2,38 @@
     $changePositionElements: 991px;
 
     .area {
-    display: none;
-    // background-color: rgba(0, 0, 0, 0.2) !important;
-
-    &__title {
-        @include adaptive-font(24, 22);
-    }
-
-    &__text {
-        @include adaptive-font(16, 14);
-    }
-
-    &__button {
-        width: auto;
-        min-width: 300px;
-    }
-
-    &__loading {
         display: none;
+        // background-color: rgba(0, 0, 0, 0.2) !important;
 
-        &--animation_send {
-            -webkit-animation: animationRotate 2s infinite;
-            animation: animationRotate 2s infinite;
-            animation-timing-function: linear;
+        &__image_successful {
+            height: auto;
+            width: 150px;
+            @media (min-width: 992px) {
+                width: auto;
+            }
         }
+
+        &__title {
+            @include adaptive-font(24, 22);
+        }
+
+        &__text {
+            @include adaptive-font(16, 14);
+        }
+
+        &__button {
+            width: auto;
+            min-width: 300px;
+        }
+
+        &__loading {
+            display: none;
+
+            &--animation_send {
+                -webkit-animation: animationRotate 2s infinite;
+                animation: animationRotate 2s infinite;
+                animation-timing-function: linear;
+            }
     }
 
     @keyframes animationRotate {
