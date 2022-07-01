@@ -4,10 +4,15 @@ export type ContactUsInput = {
     question?: string;
 }
 
-export type changeDisabledForInputsAndSubmitTypes = {
+export type HTMLElementsTypes = {
     event: Event;
-    // eslint-disable-next-line no-undef
-    inputs: NodeListOf<HTMLInputElement & HTMLTextAreaElement>;
-    areaLoading: HTMLDivElement;
-    formSubmit: HTMLButtonElement;
+    inputs: NodeListOf<HTMLInputElement | HTMLTextAreaElement>; // eslint-disable-line no-undef
+    spinner: HTMLDivElement;
+    buttonSubmit: HTMLButtonElement;
+}
+
+export type HTLMElementsDisabledStateTypes = {
+    inputs: NodeListOf<HTMLInputElement | HTMLTextAreaElement>; // eslint-disable-line no-undef
+    buttonSubmit: HTMLButtonElement;
+    isFormBlocked: boolean
 }
