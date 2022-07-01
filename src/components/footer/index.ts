@@ -28,12 +28,12 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
     const areaText = document.querySelector('#areaText');
     const areaTime = document.querySelector('#areaTime');
     const areaButton = document.querySelector('.area__button');
-    const formSubmit:any = document.querySelector('.form__submit');
-    const areaLoading: any = document.querySelector('.area__loading');
+    const formSubmit: HTMLButtonElement | null = document.querySelector('.form__submit');
+    const areaLoading: HTMLDivElement | null = document.querySelector('.area__loading');
 
-    const inputs = document.querySelectorAll('.form__input, .form__textarea');
+    const inputs: NodeListOf<HTMLInputElement & HTMLTextAreaElement> = document.querySelectorAll('.form__input, .form__textarea');
 
-    const footerOrder2: any = document.querySelector('.footer__order_2');
+    const footerOrder2: HTMLDivElement | null = document.querySelector('.footer__order_2');
 
     if (
         feedback === null
@@ -50,9 +50,16 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
     }
 
     const contactUsInput = Array.from(inputs).reduce<ContactUsInput>(
-        (acc: any, inputElement: any) => {
+        (acc, inputElement: HTMLInputElement | HTMLTextAreaElement) => {
             if (!inputElement.name || !inputElement.value) {
                 return acc;
+            }
+
+            if (inputElement.name === 'phone') {
+                return {
+                    ...acc,
+                    [ inputElement.name ]: inputElement.value.replace(/\s/g, ''),
+                };
             }
 
             return {
@@ -64,7 +71,7 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
 
 
     const changeDisabledForInputsAndSubmit = (boolean: boolean) => {
-        inputs.forEach((element: any) => {
+        inputs.forEach((element: HTMLInputElement | HTMLTextAreaElement) => {
             element.disabled = boolean;
             boolean ? element.style.opacity = '.5' : element.style.opacity = '1';
         });
@@ -79,9 +86,9 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
 
 
     const getTime = () => {
-        const dayTime: number = 1000 * 60 * 60  * 12;
+        const limitTime: number = 1000 * 60 * 60  * 12;
 
-        const time: number = dayTime - (Date.now() - new Date(Number(localStorage.getItem('time'))).getTime());
+        const time: number = limitTime - (Date.now() - new Date(Number(localStorage.getItem('time'))).getTime());
         const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
         const secs = Math.floor((time % (1000 * 60)) / 1000);
@@ -118,11 +125,10 @@ const collectAllValuesFromFeedbackForm = async (event: Event) => {
         event.preventDefault();
         changeDisabledForInputsAndSubmit(false);
         const area = document.querySelector('.area');
-        const footerOrder2: any = document.querySelector('.footer__order_2');
 
         //! Тут треба стирати при false для клієнта?
         if (result === true) {
-            feedback.childNodes.forEach((element: any) => {
+            inputs.forEach((element: HTMLInputElement | HTMLTextAreaElement) => {
                 element.value = '';
             });
         }
