@@ -28,6 +28,7 @@
 
         &__loading {
             display: none;
+            margin-left: 5px;
 
             &--animation_send {
                 -webkit-animation: animationRotate 2s infinite;
@@ -148,6 +149,9 @@
                 }
             }
             &__submit {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 @include adaptive-font(20, 15);
 
                 @media (min-width: 576px) {
