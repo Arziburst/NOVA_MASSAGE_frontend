@@ -10,29 +10,25 @@
 
             <input
                 class="form__input control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
-                name="phone" type="tel" placeholder="Ваш номер телефона?" required>
+                name="phone" type="number" placeholder="Ваш номер телефона?" pattern="" required>
 
             <textarea
                 class="form__textarea control control--padding_primary border--radius border--size_primary font--color_secondary font--family_primary font--weight_700"
                 name="question" placeholder="Тут вы можете оставить вопрос или комментарий"></textarea>
             <div class="area">
                 <p id="areaTitle"
-                    class="area__title font--color_secondary font--family_primary font--weight_700 box--margin_bottom_20">
-                    Успешно
+                    class="area__title text--center font--color_primary font--family_primary font--weight_700 box--margin_bottom_20">
+                    Ваша заявка была принята в обработку, мы свяжимся с вами в ближащие время
                 </p>
-                <p id="areaText"
-                    class="area__text font--family_primary font--weight_500 font--color_secondary font--color_gray box--margin_bottom_10">
-                    До следующий отправки осталось:
-                </p>
-                <p id="areaTime"
-                    class="area__text font--family_primary font--weight_500 font--color_secondary font--color_gray box--margin_bottom_10">
-                </p>
-                <button
-                    class="area__button control control--actions control--bg_primary control--padding_primary border--radius">
-                    <span class="font--color_tertiary font--family_primary font--weight_700">
-                        Принять
+                <div class="text--center">
+                    <span id="areaText"
+                        class="area__text font--family_primary font--weight_500 font--color_secondary font--color_gray box--margin_bottom_10">
+                        До отправки новой заявки осталось:
                     </span>
-                </button>
+                    <span id="areaTime"
+                        class="area__text font--family_primary font--weight_500 font--color_secondary font--color_gray box--margin_bottom_10">
+                    </span>
+                </div>
             </div>
         </div>
         <div id="footerOrder2" class="footer__order_2 row--flex row--justify_content_center position--relative">
