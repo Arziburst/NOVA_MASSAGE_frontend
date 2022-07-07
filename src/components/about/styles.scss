@@ -10,27 +10,56 @@
     }
 }
 
-.image_make_massage {
-    width: 100%;
-    
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
 
-    &__image {
-        height: 50vh;
-        max-height: 720px;
-        background-image: url('../../assets/images/imageMakeMassage.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    $gapItemOfGallery: 10px;
+    gap: $gapItemOfGallery;
+    
+    &__item {
+        width: 100%;
+        height: 100%;
+        height: auto;
+        object-fit: fill;
+        cursor: pointer;
+        
+        @media (min-width: 576px) {
+            width: calc(50% - $gapItemOfGallery);
+        }
     }
 }
 
-
-
-
-
-
-
-
-
-
-
+.view_item {
+    &__wrapper {
+        height: 101vh;
+        width: 101vw;
+        position: fixed;
+        // display: flex;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    &__body {
+    }
+    &__img {
+        $size: 90;
+        height: auto;
+        width: #{$size + vw};
+        max-height: #{$size + vh};
+        max-width: #{$size + vw};
+        object-fit: cover;
+    }
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        // transform: translate(-50%, 0%);
+    }
+}
