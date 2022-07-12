@@ -1,3 +1,6 @@
+// Core
+@import 'leaflet/dist/leaflet.css';
+
 // Assets
 @import './assets/variables.scss';
 @import './assets/fonts.scss';
@@ -6,6 +9,7 @@
 @import "./components/header/styles.scss";
 @import "./components/main/styles.scss";
 @import "./components/about/styles.scss";
+@import "./components/map/styles.scss";
 @import "./components/cost/styles.scss";
 @import "./components/footer/styles.scss";
 
