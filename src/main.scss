@@ -61,10 +61,25 @@ a:hover {
     @media (min-width: #{$maxWidth + px + 200px}) {
         padding: 0px 0px;
     }
+
+    &--more_lg {
+        @extend .wrapper;
+        @media (min-width: 992px) {
+            padding: 0px;
+        }
+    }
+    &--less_lg {
+        @extend .wrapper;
+        @media (max-width: 992px) {
+            padding: 0px;
+        }
+    }
 }
 
 .section {
     padding: 15px 0px;
+
+    height: 100%;
 
     &--not_padding {
         padding: 0px;

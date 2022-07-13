@@ -1,0 +1,9 @@
+#cost {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+        flex-direction: row;
+    }
+}

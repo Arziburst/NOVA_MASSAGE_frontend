@@ -25,7 +25,7 @@
         cursor: pointer;
         
         @media (min-width: 576px) {
-            width: calc(50% - $gapItemOfGallery);
+            width: calc(50% - $gapItemOfGallery / 2);
         }
     }
 }
@@ -35,14 +35,13 @@
         height: 101vh;
         width: 101vw;
         position: fixed;
-        // display: flex;
         display: none;
         align-items: center;
         justify-content: center;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 999;
+        z-index: 1001;
         background-color: rgba(0, 0, 0, 0.7);
     }
     &__body {
@@ -60,6 +59,5 @@
         position: absolute;
         top: 30px;
         right: 30px;
-        // transform: translate(-50%, 0%);
     }
 }

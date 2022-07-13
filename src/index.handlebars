@@ -17,8 +17,12 @@
     <main>
         {{> components/main/index}}
         {{> components/about/index}}
-        {{> components/map/index}}
-        {{> components/cost/index}}
+        <section class=" section section--full_screen section--center">
+            <div class="wrapper">
+                {{> components/cost/index}}
+                {{> components/map/index}}
+            </div>
+        </section>
     </main>
     {{> components/footer/index}}
 </body>
