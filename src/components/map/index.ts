@@ -37,9 +37,8 @@ window.addEventListener('load', () => {
                     s2.686-6,6-6s6,2.686,6,6S29.491,24,26.177,24z"/>
             </svg>
         `,
-        className:  '',
-        iconSize:   [ 24, 40 ],
-        iconAnchor: [ 12, 40 ],
+        className: '',
+        iconSize:  [ 28.66, 41 ],
     });
 
     Leaflet.marker(POZNYAKI_GEO, { icon: svgIcon }).addTo(createdMap);

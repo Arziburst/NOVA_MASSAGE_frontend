@@ -7,10 +7,11 @@
     }
 }
 .leaflet__icon {
-    height: 41px;
-    position: relative;
-    transform: translate(-15%, -0%);
+    $size: 41px;
+    height: $size;
+    transform: translateY(-50%);
     path {
+        height: $size;
         fill: $colorPrimary;
     }
 }
