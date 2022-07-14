@@ -1,17 +1,7 @@
 #map {
-    margin-top: 20px;
     min-height: 300px;
-
-    @media (min-width: 992px) {
-        margin-top: 50px;
-    }
-}
-.leaflet__icon {
-    $size: 41px;
-    height: $size;
-    transform: translateY(-50%);
-    path {
-        height: $size;
-        fill: #ea4335;
-    }
+    background-image: url("../../assets/images/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

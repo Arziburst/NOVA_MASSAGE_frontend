@@ -15,6 +15,6 @@ import './assets/images/quaternaryImageOfGallery.png';
 
 // TS Modules
 import './components/main';
-import './components/about';
+import './components/gallery';
 import './components/map';
 import './components/footer';

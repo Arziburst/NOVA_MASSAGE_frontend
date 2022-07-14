@@ -1,5 +1,14 @@
 .footer {
     $changePositionElements: 991px;
+    
+    height: 100%;
+
+    padding-bottom: 20px;
+
+
+    @media (min-width: 756px) {
+        padding-bottom: 50px;
+    }
 
     .area {
         display: none;

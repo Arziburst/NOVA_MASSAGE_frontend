@@ -9,6 +9,7 @@
 @import "./components/header/styles.scss";
 @import "./components/main/styles.scss";
 @import "./components/about/styles.scss";
+@import "./components/gallery/styles.scss";
 @import "./components/map/styles.scss";
 @import "./components/cost/styles.scss";
 @import "./components/footer/styles.scss";
@@ -77,12 +78,33 @@ a:hover {
 }
 
 .section {
-    padding: 15px 0px;
+    padding: 20px 0px;
 
     height: 100%;
 
+    @media (min-width: 576px) {
+        padding: 20px 0px;
+    }
+    @media (min-width: 756px) {
+        padding: 50px 0px;
+    }
+
     &--not_padding {
         padding: 0px;
+
+        &_bottom {
+            @media (min-width: 576px) {
+                &_media_sm {
+                    padding-bottom: 0px;
+                }
+            }
+            @media (min-width: 766px) {
+                &_media_md {
+                    padding-bottom: 0px;
+                }
+            }
+            
+        }
     }
 
     &--full_screen {
@@ -95,13 +117,6 @@ a:hover {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    @media (min-width: 576px) {
-        padding: 30px 0px;
-    }
-    @media (min-width: 756px) {
-        padding: 60px 0px;
     }
 }
 
@@ -323,5 +338,31 @@ a:hover {
     }
     &--absolute {
         position: absolute;
+    }
+}
+
+.cost_map {
+
+    padding: 20px 0px;
+
+
+    @media (min-width: 756px) {
+        padding: 40px 0px;
+    }
+
+    &__body {
+        
+        @media (min-width: 992px) {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 10px;
+        }
+
+    }
+    &__wrapper_map {
+        flex: 50%;
+    }
+    &__wrapper_costs {
+        flex: 50%;
     }
 }

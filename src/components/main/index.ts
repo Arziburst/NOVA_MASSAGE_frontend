@@ -1,4 +1,3 @@
-
 import { HTMLElementTyped } from './types';
 
 const header: HTMLElementTyped = document.querySelector('.header');
