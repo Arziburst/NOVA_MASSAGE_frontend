@@ -19,13 +19,12 @@ const changeHeightMap = () => {
 const watcherClickMap = () => {
     const costMapWrapperMap: HTMLDivElement | null = document.querySelector('.cost_map__wrapper_map');
 
-
     if (!costMapWrapperMap) {
         return;
     }
 
     costMapWrapperMap.addEventListener('click', () => {
-        console.log('some text');
+        // eslint-disable-next-line no-alert
         const result: boolean = confirm('Проложить путь?');
 
         if (result) {
