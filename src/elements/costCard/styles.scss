@@ -1,27 +1,19 @@
-
 .cost_card {
     $paddingMobile: 15px;
     $paddingDesktop: 30px; 
     $mediaChange: 576px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     flex: 1;
 
-    padding-top: $paddingMobile;
+    padding: $paddingMobile;
 
     @media (min-width: $mediaChange) {
         padding: $paddingDesktop;
     }
-
-    &__content {
-        @media (min-width: $mediaChange) {
-            display: flex;
-            column-gap: 20px;
-        }
-        @media (min-width: 768px) {
-            column-gap: 30px;
-        }
-    }
-
 
     &__title {
         @include adaptive-font(25, 24);
@@ -39,35 +31,5 @@
     }
     &__currency {
         @include adaptive-font(20, 15);
-    }
-
-
-    &__img {
-        
-        @media (min-width: $mediaChange) {
-            flex-basis: 45%;
-        }
-
-        img {
-            height: 100px;
-            width: 100%;
-            display: block;
-            object-fit: cover;
-
-            @media (min-width: $mediaChange) {
-                height: 100%;
-            }
-        }
-    }
-    &__body {
-        padding: $paddingMobile;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        @media (min-width: $mediaChange) {
-            flex-basis: 55%;
-            padding: 0px;
-        }
     }
 }

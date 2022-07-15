@@ -17,7 +17,13 @@
     <main>
         {{> components/main/index}}
         {{> components/about/index}}
-        {{> components/cost/index}}
+        {{> components/gallery/index}}
+        <section class="cost_map">
+            <div class="wrapper cost_map__body">
+                {{> components/cost/index}}
+                {{> components/map/index}}
+            </div>
+        </section>
     </main>
     {{> components/footer/index}}
 </body>
