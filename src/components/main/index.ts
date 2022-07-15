@@ -5,22 +5,25 @@ const photoMasterOfMainScreen: HTMLElementTyped = document.querySelector('.photo
 const mainScreen: HTMLElementTyped = document.querySelector('.main');
 const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 
-const changeHeightMainScreen = () => {
-    if (mainScreen && header) {
-        mainScreen.style.minHeight =  `${window.innerHeight - header.clientHeight}px`;
-    }
+let turnOver: boolean | null = null;
 
-    if (mql.matches && photoMasterOfMainScreen) {
-        const resultSizePhotoMasterOfMainScreen = 'calc(100vw - 40px)';
-        photoMasterOfMainScreen.style.height = resultSizePhotoMasterOfMainScreen;
-        photoMasterOfMainScreen.style.width = resultSizePhotoMasterOfMainScreen;
-    } else if (photoMasterOfMainScreen && header) {
-        const resultSizePhotoMasterOfMainScreen = `${(window.innerHeight - header.clientHeight) - 20 }px`;
-        photoMasterOfMainScreen.style.height = resultSizePhotoMasterOfMainScreen;
-        photoMasterOfMainScreen.style.width = resultSizePhotoMasterOfMainScreen;
+const changeHeightMainScreen = () => {
+    if (mainScreen && header && turnOver !== mql.matches) {
+        mainScreen.style.minHeight =  `${window.innerHeight - header.clientHeight}px`;
+
+        turnOver = mql.matches;
+
+        if (mql.matches === true && photoMasterOfMainScreen) {
+            const resultSizePhotoMasterOfMainScreen = 'calc(100vw - 40px)';
+            photoMasterOfMainScreen.style.height = resultSizePhotoMasterOfMainScreen;
+            photoMasterOfMainScreen.style.width = resultSizePhotoMasterOfMainScreen;
+        } else if (mql.matches === false && photoMasterOfMainScreen && header) {
+            const resultSizePhotoMasterOfMainScreen = `${(window.innerHeight - header.clientHeight) - 20 }px`;
+            photoMasterOfMainScreen.style.height = resultSizePhotoMasterOfMainScreen;
+            photoMasterOfMainScreen.style.width = resultSizePhotoMasterOfMainScreen;
+        }
     }
 };
 
 window.addEventListener('load', changeHeightMainScreen);
 window.addEventListener('resize', changeHeightMainScreen);
-

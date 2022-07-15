@@ -1,4 +1,7 @@
+const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 const galleryItems = document.querySelectorAll<HTMLDivElement>('.gallery__item');
+
+let turnOver: boolean | null = null;
 
 const clickImage = (element: HTMLDivElement) => {
     const viewWrapper: HTMLDListElement | null = document.querySelector('.view_item__wrapper');
@@ -23,17 +26,20 @@ const changeHeightGalleryItems = (elements: NodeListOf<HTMLDivElement>) => {
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
-    elements.forEach((element) => {
-        if (windowWidth < 576) {
-            element.style.height = `${(windowHeight / 4) - 10}px`;
+    if (turnOver !== mql.matches) {
+        elements.forEach((element) => {
+            if (windowWidth < 576) {
+                element.style.height = `${(windowHeight / 4) - 10}px`;
 
-            return;
-        }
+                return;
+            }
 
-        if (windowWidth > 576) {
-            element.style.height = `${(windowHeight / 2) - 10}px`;
-        }
-    });
+            if (windowWidth > 576) {
+                element.style.height = `${(windowHeight / 2) - 10}px`;
+            }
+        });
+        turnOver = mql.matches;
+    }
 };
 
 

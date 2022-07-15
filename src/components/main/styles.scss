@@ -7,7 +7,10 @@ $changePositionElementsMedia: 992px;
 
 .main {
     min-height: calc(100vh - 72px);
-    
+
+    padding-top: 10px;
+    margin-bottom: 20px;
+
     &__title {
         margin-top: 0px;
         margin-bottom: 0.5em;
@@ -168,8 +171,6 @@ $changePositionElementsMedia: 992px;
         align-items: center; 
         width: 100%;
         height: 100%;
-        padding-top: 10px;
-        padding-bottom: 10px;
 
         @media (max-width: 576px) and (orientation: portrait) {
             grid-template-rows: auto auto auto;

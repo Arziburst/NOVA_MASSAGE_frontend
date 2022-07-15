@@ -1,15 +1,17 @@
+const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 const map: HTMLDivElement | null = document.querySelector('#map');
 const costCards: HTMLDivElement | null = document.querySelector('#cost');
 
+let turnOver: boolean | null = null;
 
 const changeHeightMap = () => {
-    const windowWidth = window.innerWidth;
     if (!(map && costCards)) {
         return;
     }
-
-    if (windowWidth < 992) {
+    if (window.outerHeight < 992 && turnOver !== mql.matches) {
         map.style.height = `${(window.innerHeight - costCards.clientHeight) - 40}px`;
+
+        turnOver = mql.matches;
 
         return;
     }
