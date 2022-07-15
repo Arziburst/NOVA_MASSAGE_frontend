@@ -25,7 +25,7 @@ const watcherClickMap = () => {
 
     costMapWrapperMap.addEventListener('click', () => {
         // eslint-disable-next-line no-alert
-        const result: boolean = confirm('Проложить путь?');
+        const result: boolean = confirm('Проложить маршрут с помощью карт?');
 
         if (result) {
             window.open('https://www.google.com/maps/search/?api=1&query=50.39837929264725,30.634371072554035', '_blank');
