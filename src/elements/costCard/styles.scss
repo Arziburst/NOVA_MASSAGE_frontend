@@ -1,6 +1,6 @@
 .cost_card {
     $paddingMobile: 15px;
-    $paddingDesktop: 30px; 
+    $paddingDesktop: 20px; 
     $mediaChange: 576px;
 
     display: flex;
@@ -14,17 +14,20 @@
     @media (min-width: $mediaChange) {
         padding: $paddingDesktop;
     }
+    @media (min-width: 1600px) {
+        padding: 30px;
+    }
 
     &__title {
         @include adaptive-font(25, 24);
-        padding-bottom: 1em;
+        padding-bottom: 0.7em;
         
         @media (min-width: $mediaChange) {
         }
     }
     &__text {
         @include adaptive-font(20, 18);
-        margin-bottom: 1em;
+        margin-bottom: 0.7em;
     }
     &__value {
         @include adaptive-font(25, 24);

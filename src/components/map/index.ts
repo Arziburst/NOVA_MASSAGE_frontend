@@ -1,23 +1,3 @@
-const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
-const map: HTMLDivElement | null = document.querySelector('#map');
-const costCards: HTMLDivElement | null = document.querySelector('#cost');
-
-let turnOver: boolean | null = null;
-
-const changeHeightMap = () => {
-    if (!(map && costCards)) {
-        return;
-    }
-    if (window.outerHeight < 992 && turnOver !== mql.matches) {
-        map.style.height = `${(window.innerHeight - costCards.clientHeight) - 40}px`;
-
-        turnOver = mql.matches;
-
-        return;
-    }
-    map.style.height = '100%';
-};
-
 const watcherClickMap = () => {
     const costMapWrapperMap: HTMLDivElement | null = document.querySelector('.cost_map__wrapper_map');
 
@@ -36,11 +16,7 @@ const watcherClickMap = () => {
 };
 
 
-window.addEventListener('load', () => {
-    watcherClickMap();
-    changeHeightMap();
-});
+window.addEventListener('load', watcherClickMap);
 
-window.addEventListener('resize', changeHeightMap);
 
 export {};
