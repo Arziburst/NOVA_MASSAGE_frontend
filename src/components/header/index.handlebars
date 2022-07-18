@@ -1,21 +1,30 @@
 <header class="header">
     <div class="wrapper row row--justify_content_between row--align_items_center">
         <div>
-            <h2 class="header__title font--family_primary font--weight_700 font--color_primary">
-                Борис Бортников
+            <h2 id="lng_header_title" class="header__title font--family_primary font--weight_700 font--color_primary">
+                Борис Бортніков
             </h2>
-            <h3 class="header__subtitle font--family_primary font--weight_300 font--color_secondary">
+            <h3 id="lng_header_subtitle"
+                class="header_subtitle font--family_primary font--weight_300 font--color_secondary">
                 Юмейхо-терапевт
             </h3>
         </div>
         <div class="nav">
             <nav class="nav__wrapper">
                 <ul class="nav__list_item">
-                    {{> ../../elements/navLink/index.handlebars text='Про меня' href='#about'}}
-                    {{> ../../elements/navLink/index.handlebars text='Галерея' href='#gallery'}}
-                    {{> ../../elements/navLink/index.handlebars text='Цены' href='#cost'}}
-                    {{> ../../elements/navLink/index.handlebars text='Контакты' href='#contact'}}
+                    {{> ../../elements/navLink/index.handlebars id='lng_header_nav_link_1' text='Про мене'
+                    href='#about'}}
+                    {{> ../../elements/navLink/index.handlebars id='lng_header_nav_link_2' text='Галерея'
+                    href='#gallery'}}
+                    {{> ../../elements/navLink/index.handlebars id='lng_header_nav_link_3' text='Ціни' href='#cost'}}
+                    {{> ../../elements/navLink/index.handlebars id='lng_header_nav_link_4' text='Контакти'
+                    href='#contact'}}
                 </ul>
+                <select id="change_lang">
+                    <option value="" selected>UA</option>
+                    <option value="ru">RU</option>
+                    <option value="en">EN</option>
+                </select>
             </nav>
             <a href='tel:+38096-170-5376' class="icon__phone">
                 <svg width="20" height="24" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
