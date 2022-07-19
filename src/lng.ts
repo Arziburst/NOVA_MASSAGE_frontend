@@ -47,32 +47,32 @@ export const langArrBlockScreen: any = {
             ru: 'Фотография Бортникова Бориса',
             en: 'Photo Bortnikov Boris',
         },
-        card__title_1: {
+        card_title_1: {
             ua: '3 сеанси',
             ru: '3 сеанса',
             en: '3 sessions',
         },
-        card__text_1: {
+        card_text_1: {
             ua: 'Результат',
             ru: 'Результат',
             en: 'Result',
         },
-        card__title_2: {
+        card_title_2: {
             ua: '5 років',
             ru: '5 лет',
             en: '5 years',
         },
-        card__text_2: {
+        card_text_2: {
             ua: 'Досвіду',
             ru: 'Опыта',
             en: 'Experience',
         },
-        card__title_3: {
+        card_title_3: {
             ua: '1000+',
             ru: '1000+',
             en: '1000+',
         },
-        card__text_3: {
+        card_text_3: {
             ua: 'Задоволених клієнтів',
             ru: 'Довольных клиентов',
             en: 'Satisfied customers',

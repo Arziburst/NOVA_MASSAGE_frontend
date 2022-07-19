@@ -60,8 +60,6 @@ const changeLanguageOnAllPage = (selectChangeLang: HTMLSelectElement) => {
 
                     if (element.tagName === 'IMG') {
                         element.alt = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ][ pathPathname ];
-
-                        return;
                     }
 
                     if (pathPathname && allLang.some((lng) => lng === pathPathname)) {
