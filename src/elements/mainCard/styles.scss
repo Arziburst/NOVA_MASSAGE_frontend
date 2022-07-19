@@ -46,7 +46,7 @@
             right: 0%;
             transform: translate(0%, -50%);
             
-            @media (min-width: 460px) {
+            @media (min-width: 510px) {
                 transform: translate(50%, -50%);
             }
             @media (min-width: 576px) and (max-height: 576px) {
@@ -94,7 +94,7 @@
             left: 0%;
             transform: translate(0%, -50%);
 
-            @media (min-width: 460px) {
+            @media (min-width: 510px) {
                 transform: translate(-50%, -50%);
             }
             @media (min-width: 1050px) {

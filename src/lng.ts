@@ -1,9 +1,9 @@
 export const langArrBlockScreen: any = {
     header: {
         title: {
-            ua: 'Борис Бортніков UA',
-            ru: 'Борис Бортников RU',
-            en: 'Boris Bortnikov EN',
+            ua: 'Борис Бортніков',
+            ru: 'Борис Бортников',
+            en: 'Boris Bortnikov',
         },
         subtitle: {
             ua: 'Юмейхо-терапевт',

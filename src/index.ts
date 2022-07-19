@@ -23,23 +23,30 @@ import { langArrBlockScreen } from './lng';
 
 const allLang = [ '', 'ru', 'en' ];
 
+// const countriesSNG = [ 'Russian' ];
+
 // const country = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const geo = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
 
-function changeLanguage(selectChangeLang: HTMLSelectElement) {
-    let hash = window.location.hash;
-    hash = hash.substr(1);
+        fetch(geo).then((res) => res.json())
+            .then((data) => console.log(data.countryName));
+    });
+}
 
-    console.log(`hash >>>> ${hash}`);
-    if (!hash) {
-        return;
+
+const changeLanguageOnAllPage = (selectChangeLang: HTMLSelectElement) => {
+    const tagHTML = document.querySelector('html');
+    const pathPathname = window.location.pathname.replace(/\//g, '');
+
+    selectChangeLang.value = pathPathname;
+    if (tagHTML) {
+        tagHTML.lang = pathPathname;
     }
-
-    if (!allLang.includes(hash)) {
-        location.href = String(window.location.pathname);
-        location.reload();
-    }
-    selectChangeLang.value = hash;
 
     for (const keyLangArrBlockScreen in langArrBlockScreen) {
         if (Object.prototype.hasOwnProperty.call(langArrBlockScreen, keyLangArrBlockScreen)) {
@@ -47,44 +54,50 @@ function changeLanguage(selectChangeLang: HTMLSelectElement) {
             for (const keyBlockScreen in blockScreen) {
                 if (Object.prototype.hasOwnProperty.call(blockScreen, keyBlockScreen)) {
                     const element = document.querySelector<any>('#lng_' + keyLangArrBlockScreen + '_' + keyBlockScreen);
-                    const defaultValue = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ].ua;
                     if (!element) {
                         return;
                     }
 
-                    console.log(element.tagName);
-
                     if (element.tagName === 'IMG') {
-                        element.alt = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ][ hash ];
+                        element.alt = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ][ pathPathname ];
+
+                        return;
                     }
 
-                    if (element) {
-                        element.innerHTML = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ][ hash ];
+                    if (pathPathname && allLang.some((lng) => lng === pathPathname)) {
+                        element.textContent
+                        = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ][ pathPathname ];
                     } else {
-                        element.innerHTML = defaultValue;
+                        element.textContent = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ].ua;
                     }
                 }
             }
         }
     }
-}
+};
 
-function changeURLLanguage(selectChangeLang: HTMLSelectElement) {
+const changeURLLanguage = (selectChangeLang: HTMLSelectElement) => {
     const lang = selectChangeLang.value;
-    console.log(`lang >>> ${lang}`);
-    //! remove /#
-    location.href = window.location.pathname + '#' + lang;
-    location.reload();
-}
+    history.pushState(null, '', `/${lang}`);
+};
 
 window.addEventListener('load', () => {
-    console.log(`load > window.location.hash >>>> ${window.location.hash}`);
     const selectChangeLang = document.querySelector<HTMLSelectElement>('#change_lang');
+    const pathPathname = window.location.pathname.replace(/\//g, '');
+
     if (!selectChangeLang) {
         return;
     }
-    changeLanguage(selectChangeLang);
 
-    selectChangeLang.addEventListener('change', () => changeURLLanguage(selectChangeLang));
+    changeLanguageOnAllPage(selectChangeLang);
+
+    if (allLang.some((lng) => lng !== pathPathname)) {
+        history.pushState(null, '', '/');
+    }
+
+    selectChangeLang.addEventListener('change', () => {
+        changeURLLanguage(selectChangeLang);
+        changeLanguageOnAllPage(selectChangeLang);
+    });
 });
 
