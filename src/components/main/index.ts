@@ -7,7 +7,7 @@ const mql: MediaQueryList = window.matchMedia('(orientation: portrait)');
 
 let turnOver: boolean | null = null;
 
-const changeHeightMainScreen = () => {
+export const changeHeightMainScreen = () => {
     if (mainScreen && header && turnOver !== mql.matches) {
         mainScreen.style.minHeight =  `${window.innerHeight - header.clientHeight}px`;
 

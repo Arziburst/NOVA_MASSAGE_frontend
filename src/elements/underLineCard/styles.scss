@@ -1,6 +1,11 @@
 .under_line {
     &__card {
+        padding: 0px 5px;
         flex: 33%;
+
+        @media (min-width: 576px) {
+            padding: 0px 10px;
+        }
     }
     &__title {
         margin-top: 1em;
