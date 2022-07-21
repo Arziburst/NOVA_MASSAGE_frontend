@@ -18,10 +18,10 @@
         &__wrapper {
             display: none;
             
-            @media (min-width: 830px) {
+            @media (min-width: 770px) {
                 display: flex;
                 align-content: center;
-                margin-right: 50px;
+                margin-right: 20px;
             }
         }
         &__list_item {
@@ -33,6 +33,7 @@
     } 
 
     .icon__phone {
+        margin-right: 20px;
         svg {
             path {
                 fill: $colorPrimary;
@@ -41,5 +42,9 @@
         &:hover, &:focus {
             opacity: 0.6;
         }
+    }
+    #change_lang {
+        border: none;
+        background-color: transparent;
     }
 }
