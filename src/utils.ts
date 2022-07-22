@@ -14,7 +14,7 @@ export const changeLanguageOnPage = () => {
     const pathPathname = window.location.pathname.replace(/\//g, '');
 
     if (tagHTML) {
-        tagHTML.lang = pathPathname;
+        tagHTML.lang = pathPathname === '' ? 'uk' : pathPathname;
     }
 
     if (pathPathname === defaultURL) {
