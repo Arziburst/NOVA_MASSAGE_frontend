@@ -18,7 +18,15 @@ import './components/map';
 import './components/footer';
 
 // Utils
-import { allLang, changeLanguageOnAllPage, checkCountryAndChangeURL, changeURLLanguage } from './utils';
+import {
+    allLang,
+    changeLanguageOnPage,
+    checkCountryAndChangeURL,
+    changeURL,
+    ukraine,
+    defaultURL,
+    ls,
+} from './utils';
 import { changeHeightMainScreen } from './components/main';
 
 window.addEventListener('load', () => {
@@ -30,30 +38,43 @@ window.addEventListener('load', () => {
     }
 
     selectChangeLang.addEventListener('change', () => {
-        changeURLLanguage(selectChangeLang);
-        changeLanguageOnAllPage(selectChangeLang);
-        if (selectChangeLang.value === '') {
-            location.reload();
+        ls.set(`${selectChangeLang.value}`);
+        changeURL(selectChangeLang.value);
 
+        if (selectChangeLang.value === ukraine) {
             return;
         }
+        changeLanguageOnPage();
+
         changeHeightMainScreen();
     });
 
-    if (typeof sessionStorage.getItem('isVisited') !== 'string') {
-        checkCountryAndChangeURL(selectChangeLang);
+    if (ls.get()) {
+        const countryFromLocalStorage = ls.get();
+
+        if (countryFromLocalStorage !== null && allLang.includes(countryFromLocalStorage)) {
+            selectChangeLang.value = countryFromLocalStorage;
+            changeURL(countryFromLocalStorage);
+            changeLanguageOnPage();
+
+            changeHeightMainScreen();
+
+            return;
+        }
 
         return;
     }
 
+    if (allLang.includes(pathPathname)) {
+        if (pathPathname === defaultURL) {
+            checkCountryAndChangeURL(selectChangeLang);
+        } else {
+            selectChangeLang.value = pathPathname;
+            changeURL(selectChangeLang.value);
+            changeLanguageOnPage();
 
-    if (!allLang.some((lng) => lng === pathPathname)) {
-        changeLanguageOnAllPage(selectChangeLang);
-        checkCountryAndChangeURL(selectChangeLang);
-        changeHeightMainScreen();
-    } else {
-        changeLanguageOnAllPage(selectChangeLang);
-        changeHeightMainScreen();
+            changeHeightMainScreen();
+        }
     }
 });
 

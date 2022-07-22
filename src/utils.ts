@@ -1,23 +1,26 @@
 import { changeHeightMainScreen } from './components/main';
 import { langArrBlockScreen } from './languages';
 
-export const allLang = [ '', 'ru', 'en' ];
+export const defaultURL = '';
+
+export const allLang = [ defaultURL, 'ru', 'en' ];
+
+export const ukraine = 'ua';
 
 export const countriesSNG = [ 'Russia', 'Armenia', 'Azerbaijan', 'Belarus', 'Kazakhstan', 'Kyrgyzstan', 'Moldova', 'Tajikistan', 'Uzbekistan' ];
 
-export const changeLanguageOnAllPage = (selectChangeLang: HTMLSelectElement) => {
+export const changeLanguageOnPage = () => {
     const tagHTML = document.querySelector('html');
     const pathPathname = window.location.pathname.replace(/\//g, '');
 
-
-    selectChangeLang.value = pathPathname;
-
-    if (!allLang.includes(pathPathname) || pathPathname === '') {
-        return;
+    if (tagHTML) {
+        tagHTML.lang = pathPathname === '' ? 'uk' : pathPathname;
     }
 
-    if (tagHTML) {
-        tagHTML.lang = pathPathname === '' ? 'ua' : pathPathname;
+    if (pathPathname === defaultURL) {
+        location.reload();
+
+        return;
     }
 
     for (const keyLangArrBlockScreen in langArrBlockScreen) {
@@ -44,7 +47,7 @@ export const changeLanguageOnAllPage = (selectChangeLang: HTMLSelectElement) => 
                             return;
                         }
 
-                        if (pathPathname && allLang.some((lng) => lng === pathPathname)) {
+                        if (pathPathname && allLang.includes(pathPathname)) {
                             element.textContent
                         = langArrBlockScreen[ keyLangArrBlockScreen ][ keyBlockScreen ][ pathPathname ];
                         }
@@ -70,19 +73,17 @@ export const checkCountryAndChangeURL = (selectChangeLang: HTMLSelectElement) =>
                         return;
                     }
 
-                    sessionStorage.setItem('isVisited', `${yourCountryName}`);
-
                     if (yourCountryName === 'Ukraine') {
-                        history.pushState(null, '', '/');
-                        selectChangeLang.value = '';
+                        history.pushState(null, '', `/${defaultURL}`);
+                        selectChangeLang.value = ukraine;
 
                         return;
                     }
 
-                    if (yourCountryName !== 'Ukraine' && !countriesSNG.some((lng) => lng === yourCountryName)) {
+                    if (yourCountryName !== 'Ukraine' && !countriesSNG.includes(yourCountryName)) {
                         history.pushState(null, '', '/en');
                         selectChangeLang.value = 'en';
-                        changeLanguageOnAllPage(selectChangeLang);
+                        changeLanguageOnPage();
                         changeHeightMainScreen();
 
                         return;
@@ -91,21 +92,30 @@ export const checkCountryAndChangeURL = (selectChangeLang: HTMLSelectElement) =>
                     if (countriesSNG.includes(yourCountryName)) {
                         history.pushState(null, '', '/ru');
                         selectChangeLang.value = 'ru';
-                        changeLanguageOnAllPage(selectChangeLang);
+                        changeLanguageOnPage();
                         changeHeightMainScreen();
 
                         return;
                     }
 
-                    //? reload
-                    history.pushState(null, '', '/');
-                    selectChangeLang.value = '';
+                    history.pushState(null, '', `/${defaultURL}`);
+                    selectChangeLang.value = ukraine;
                 });
         });
     }
 };
 
-export const changeURLLanguage = (selectChangeLang: HTMLSelectElement) => {
-    const lang = selectChangeLang.value;
-    history.pushState(null, '', `/${lang}`);
+export const changeURL = (value: string) => {
+    if (value === ukraine) {
+        history.pushState(null, '', `/${defaultURL}`);
+        location.reload();
+
+        return;
+    }
+    history.pushState(null, '', `/${value}`);
+};
+
+export const ls = {
+    set: (value: string) => localStorage.setItem('isVisited', value),
+    get: (value: string = 'isVisited') => localStorage.getItem(value),
 };
