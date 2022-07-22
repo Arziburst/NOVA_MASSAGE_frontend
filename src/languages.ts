@@ -184,16 +184,11 @@ export const langArrBlockScreen: any = {
             ru: 'Киев (десять минут от метро Позняки)',
             en: 'Kyiv (ten minutes from Poznyaki metro station)',
         },
-
-        // title: {
-        //     ru: '',
-        //     en: '',
-        // },
     },
-    // test: {
-    //     title: {
-    //         ru: '',
-    //         en: '',
-    //     },
-    // },
+};
+
+export const langBlockMapConfirm = {
+    ua: 'Прокласти маршрут за допомогою карток?',
+    ru: 'Проложить маршрут с помощью карт?',
+    en: 'Get direction using map?',
 };
