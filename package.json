@@ -12,7 +12,10 @@
         "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./build\" -s",
-        "clean": "rm -rf node_modules"
+        "clean": "rm -rf node_modules",
+        "toDocker": "docker build -t arziburst/norkamasagerka .",
+        "toDockerHub": "docker push arziburst/norkamasagerka",
+        "deploy": "npm run build && npm run toDocker && npm run toDockerHub"
     },
     "devDependencies": {
         "@squoosh/lib": "^0.4.0",
