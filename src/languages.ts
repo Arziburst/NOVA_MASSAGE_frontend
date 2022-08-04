@@ -34,8 +34,8 @@ export const langArrBlockScreen: any = {
             en: 'Japanese massage therapy',
         },
         subtitle: {
-            ru: 'Реабилитационный массаж в японском исполнении',
-            en: 'Japanese Rehabilitation Massage',
+            ru: 'Для реабилитации и восстановления здоровья позвоночника, суставов и мышц, улучшение общего состояния',
+            en: 'For the rehabilitation and restoration of the health of the spine, joints and muscles, improving the general condition',
         },
         photo: {
             ru: 'Фотография Бортникова Бориса',
@@ -89,7 +89,7 @@ export const langArrBlockScreen: any = {
         },
         under_line_card_1: {
             ru: 'лет',
-            en: 'yers',
+            en: 'years',
         },
         under_line_card_2: {
             ru: 'лет опыта',
